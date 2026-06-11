@@ -1,0 +1,17 @@
+version: '3'
+
+tasks:
+  fetch:
+    desc: Download raw ABS sources into data/raw/ (cached, skips existing)
+    cmds:
+      - uv run etl fetch
+
+  build:
+    desc: Build artifacts (suburbs.pmtiles + metrics.json) into ../app/public/data/
+    cmds:
+      - uv run etl build
+
+  test:
+    desc: Run unit tests (no downloads needed)
+    cmds:
+      - uv run pytest

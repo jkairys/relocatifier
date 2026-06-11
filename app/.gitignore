@@ -1,0 +1,7 @@
+node_modules
+dist
+*.local
+*.tsbuildinfo
+
+# ETL output artifacts (built by `task etl:build`, never committed)
+public/data/
