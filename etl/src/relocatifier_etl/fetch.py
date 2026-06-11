@@ -6,7 +6,7 @@ from pathlib import Path
 import httpx
 
 from .paths import RAW_DIR
-from .sources import ALL_SOURCES, Source
+from .sources import SAL_BOUNDARIES, Source
 
 _CHUNK = 1 << 20  # 1 MiB
 _PROGRESS_EVERY = 10 * _CHUNK
@@ -43,7 +43,12 @@ def download(source: Source, dest_dir: Path = RAW_DIR) -> Path:
 
 
 def fetch_all() -> None:
-    for source in ALL_SOURCES:
+    from .source_modules import iter_source_modules
+
+    sources = [SAL_BOUNDARIES]
+    for module in iter_source_modules():
+        sources.extend(module.RAW_SOURCES)
+    for source in sources:
         try:
             download(source)
         except httpx.HTTPError as exc:

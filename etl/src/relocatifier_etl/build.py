@@ -1,8 +1,8 @@
 """Build the static artifacts: suburbs.pmtiles + metrics.json.
 
-Reads the raw ABS downloads, keeps NSW + QLD Suburbs (SALs), joins Census
-metrics by SAL code (never by name — ADR-0001), and emits the artifact
-contract defined in docs/PRD.md into app/public/data/.
+Loads the spatial backbone (NSW + QLD SALs), runs every discovered source
+module against it, derives cross-source metrics (gross yield), and emits the
+artifact contract defined in docs/PRD.md into app/public/data/.
 """
 
 from __future__ import annotations
@@ -11,25 +11,25 @@ import json
 import shutil
 import subprocess
 import tempfile
-import zipfile
 from pathlib import Path
 
-import duckdb
 import geopandas as gpd
 
+from .context import BuildContext
 from .paths import ARTIFACT_DIR, RAW_DIR
-from .sources import CENSUS_GCP_SAL, SAL_BOUNDARIES
+from .sources import SAL_BOUNDARIES
+from .source_modules import iter_source_modules
 from .transform import (
     STATE_NAME_TO_ABBREV,
     display_name,
+    gross_yield,
     metric_stats,
     normalise_sal_code,
-    pct_children,
 )
 
-METRIC_DEFS = {
-    "median_age": {"label": "Median age", "format": "years", "direction": "lower_better"},
-    "pct_children": {"label": "% children (0–14)", "format": "percent", "direction": "higher_better"},
+# Derived in core, not by any single source module: needs rent AND price.
+DERIVED_METRICS = {
+    "gross_yield": {"label": "Gross yield", "format": "percent", "direction": "higher_better"},
 }
 
 
@@ -45,59 +45,6 @@ def load_suburbs() -> gpd.GeoDataFrame:
     gdf["name"] = gdf["SAL_NAME21"].map(display_name)
     gdf["state"] = gdf["STE_NAME21"].map(STATE_NAME_TO_ABBREV)
     return gdf[["sal_code", "name", "state", "geometry"]].to_crs(epsg=4326)
-
-
-def _extract_census_csvs(workdir: Path) -> dict[str, Path]:
-    """Pull the G01 and G02 AUST x SAL CSVs out of the DataPack zip."""
-    zip_path = RAW_DIR / CENSUS_GCP_SAL.filename
-    if not zip_path.exists():
-        raise SystemExit(f"missing {zip_path} — run `etl fetch` first")
-    wanted = {"G01": None, "G02": None}
-    with zipfile.ZipFile(zip_path) as zf:
-        for member in zf.namelist():
-            base = Path(member).name
-            for table in wanted:
-                if base == f"2021Census_{table}_AUST_SAL.csv":
-                    target = workdir / base
-                    with zf.open(member) as src, target.open("wb") as dst:
-                        shutil.copyfileobj(src, dst)
-                    wanted[table] = target
-    missing = [t for t, p in wanted.items() if p is None]
-    if missing:
-        raise SystemExit(f"DataPack zip is missing tables: {missing}")
-    return wanted
-
-
-def load_census_metrics() -> dict[str, dict[str, float | None]]:
-    """Per-SAL metric values keyed by normalised SAL code.
-
-    SALs with zero/null population get null values (their polygons stay).
-    """
-    with tempfile.TemporaryDirectory() as tmp:
-        csvs = _extract_census_csvs(Path(tmp))
-        rows = duckdb.connect().execute(
-            """
-            SELECT
-                g01.SAL_CODE_2021    AS sal_code,
-                g01.Tot_P_P          AS total_persons,
-                g01.Age_0_4_yr_P     AS age_0_4,
-                g01.Age_5_14_yr_P    AS age_5_14,
-                g02.Median_age_persons AS median_age
-            FROM read_csv(?, header = true) AS g01
-            LEFT JOIN read_csv(?, header = true) AS g02 USING (SAL_CODE_2021)
-            """,
-            [str(csvs["G01"]), str(csvs["G02"])],
-        ).fetchall()
-
-    metrics: dict[str, dict[str, float | None]] = {}
-    for raw_code, total, age_0_4, age_5_14, median_age in rows:
-        code = normalise_sal_code(raw_code)
-        has_population = total is not None and total > 0
-        metrics[code] = {
-            "median_age": float(median_age) if has_population and median_age is not None else None,
-            "pct_children": pct_children(age_0_4, age_5_14, total) if has_population else None,
-        }
-    return metrics
 
 
 def build_pmtiles(suburbs: gpd.GeoDataFrame, out_path: Path) -> None:
@@ -128,22 +75,37 @@ def build_pmtiles(suburbs: gpd.GeoDataFrame, out_path: Path) -> None:
 
 def build_metrics_json(
     suburbs: gpd.GeoDataFrame,
-    census: dict[str, dict[str, float | None]],
+    metric_defs: dict[str, dict],
+    values: dict[str, dict[str, float | None]],
+    vintages: dict[str, str],
     out_path: Path,
 ) -> dict:
-    """Assemble metrics.json per the PRD artifact contract."""
+    """Assemble metrics.json per the PRD artifact contract.
+
+    Metrics with zero non-null values are dropped entirely — the frontend
+    then renders them as pending ("soon") rather than as an all-grey layer.
+    """
+    populated = {
+        metric: defn
+        for metric, defn in metric_defs.items()
+        if any(v.get(metric) is not None for v in values.values())
+    }
+    for metric in metric_defs.keys() - populated.keys():
+        print(f"[build] WARNING: metric {metric} has no values anywhere — dropped")
+    metric_defs = populated
+
     suburb_entries: dict[str, dict] = {}
     for row in suburbs.itertuples():
-        values = census.get(row.sal_code, {})
+        suburb_values = values.get(row.sal_code, {})
         suburb_entries[row.sal_code] = {
             "name": row.name,
             "state": row.state,
-            "values": {metric: values.get(metric) for metric in METRIC_DEFS},
+            "values": {metric: suburb_values.get(metric) for metric in metric_defs},
         }
 
     doc = {
         "schema_version": 1,
-        "vintages": {"census": "2021"},
+        "vintages": vintages,
         "metrics": {
             metric: {
                 **defn,
@@ -155,7 +117,7 @@ def build_metrics_json(
                     ]
                 ),
             }
-            for metric, defn in METRIC_DEFS.items()
+            for metric, defn in metric_defs.items()
         },
         "suburbs": suburb_entries,
     }
@@ -166,12 +128,39 @@ def build_metrics_json(
 
 
 def build_all() -> None:
+    from .source_modules import abs_census
+
     suburbs = load_suburbs()
     print(f"[build] {len(suburbs)} NSW+QLD suburbs loaded from SAL boundaries")
-    census = load_census_metrics()
-    print(f"[build] census metrics for {len(census)} SALs")
+    ctx = BuildContext(suburbs=suburbs, population=abs_census.load_population())
 
-    doc = build_metrics_json(suburbs, census, ARTIFACT_DIR / "metrics.json")
+    metric_defs: dict[str, dict] = {}
+    vintages: dict[str, str] = {}
+    values: dict[str, dict[str, float | None]] = {}
+    for module in iter_source_modules():
+        name = module.__name__.rsplit(".", 1)[-1]
+        overlap = metric_defs.keys() & module.METRICS.keys()
+        if overlap:
+            raise SystemExit(f"source module {name} redefines metrics: {sorted(overlap)}")
+        module_values = module.build(ctx)
+        metric_defs.update(module.METRICS)
+        vintages.update(module.VINTAGES)
+        for sal_code, suburb_values in module_values.items():
+            values.setdefault(sal_code, {}).update(suburb_values)
+        covered = sum(
+            1 for v in module_values.values() if any(x is not None for x in v.values())
+        )
+        print(f"[build] {name}: {sorted(module.METRICS)} for {covered} suburbs")
+
+    metric_defs.update(DERIVED_METRICS)
+    for suburb_values in values.values():
+        suburb_values["gross_yield"] = gross_yield(
+            suburb_values.get("median_rent_house"), suburb_values.get("median_house_price")
+        )
+
+    doc = build_metrics_json(
+        suburbs, metric_defs, values, vintages, ARTIFACT_DIR / "metrics.json"
+    )
     with_values = sum(
         1 for e in doc["suburbs"].values() if any(v is not None for v in e["values"].values())
     )

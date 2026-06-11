@@ -53,6 +53,13 @@ def pct_children(age_0_4: float | None, age_5_14: float | None, total_persons: f
     return round((age_0_4 + age_5_14) / total_persons * 100, 1)
 
 
+def gross_yield(weekly_rent: float | None, price: float | None) -> float | None:
+    """Gross rental yield %, per CONTEXT.md: weekly rent × 52 ÷ price. 1 dp."""
+    if weekly_rent is None or price is None or price <= 0:
+        return None
+    return round(weekly_rent * 52 / price * 100, 1)
+
+
 def metric_stats(values: list[float]) -> dict[str, float]:
     """median / p10 / p90 across non-null suburb values, rounded to 1 dp."""
     if not values:

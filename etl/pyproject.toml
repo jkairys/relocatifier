@@ -9,6 +9,7 @@ dependencies = [
     "typer>=0.12",
     "geopandas>=1.0",
     "pyarrow>=17.0",
+    "openpyxl>=3.1.5",
 ]
 
 [project.scripts]
