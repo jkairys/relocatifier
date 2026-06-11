@@ -21,7 +21,15 @@ A single per-Suburb attribute used for comparison — median age, median house p
 The 10,000-foot research mode: comparing Metrics across every Suburb in the Search Zone (choropleth maps, stat sheets) to produce a shortlist. Tolerates stale-but-consistent data.
 
 **Watchlist**:
-A set of shortlisted Suburbs that receive fresher, deeper data collection — recent sales, live listings, property-to-school proximity. The zoom-in mode that follows Discovery.
+A set of shortlisted Suburbs that receive fresher, deeper data collection — historical sales, price-over-time, time-on-market, property-to-school proximity. The zoom-in mode that follows Discovery.
+_Avoid_: watch area, watch collection, watch list
+
+**Starred Listing**:
+A single live listing the user found while browsing a real-estate site and imported by hand to track alongside Watchlist data. Live listings are never scraped in bulk.
+
+**Parcel**:
+A cadastral lot of land. Its block size (m²) distinguishes established areas (~600–800 m²) from new estates (~400 m²).
+_Avoid_: lot, block
 
 **Yield**:
 Gross rental yield for a Suburb: median weekly house rent × 52 ÷ median house price. Indicative, not investment-grade — computed from suburb medians, used to find suburbs where buy-then-rent-out is plausibly neutrally or positively geared.
