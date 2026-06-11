@@ -18,6 +18,8 @@ export interface MetricDef {
 export interface SuburbRecord {
   name: string;
   state: string;
+  /** [lng, lat] centroid for flyTo; optional defensively (older artifacts). */
+  centre?: [number, number];
   values: Record<string, number | null>;
 }
 
@@ -49,4 +51,9 @@ export interface PickedSuburb {
   salCode: string;
   name: string;
   state: string;
+}
+
+/** Imperative camera commands MapView exposes to the rest of the app. */
+export interface MapApi {
+  flyTo(centre: [number, number], zoom?: number): void;
 }

@@ -42,9 +42,53 @@ body {
   overflow: hidden;
 }
 
+.map-wrap {
+  position: absolute;
+  inset: 0;
+  overflow: hidden;
+}
+
 .map-canvas {
   position: absolute;
   inset: 0;
+}
+
+/* Cursor tooltip — positioned imperatively, never re-rendered by React. */
+.map-tooltip {
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 12;
+  display: flex;
+  align-items: baseline;
+  gap: 8px;
+  padding: 5px 10px;
+  border-radius: 8px;
+  background: var(--surface);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  border: 1px solid var(--hairline);
+  box-shadow: var(--shadow);
+  pointer-events: none;
+  opacity: 0;
+  white-space: nowrap;
+  font-size: 12.5px;
+  will-change: transform;
+}
+
+.map-tooltip-name {
+  font-weight: 600;
+}
+
+.map-tooltip-value {
+  font-weight: 600;
+  font-variant-numeric: tabular-nums;
+  color: var(--accent);
+}
+
+.map-tooltip-value.is-empty {
+  color: var(--ink-faint);
+  font-weight: 500;
 }
 
 /* ---------- Floating panels ---------- */
@@ -112,6 +156,119 @@ body {
   min-width: 0;
 }
 
+/* ---------- Suburb search ---------- */
+
+.search {
+  position: relative;
+  /* Hold a real width even though the vintage string wants the whole row. */
+  flex: 1 0 180px;
+  max-width: 320px;
+  margin: 0 12px;
+}
+
+.search-icon {
+  position: absolute;
+  top: 50%;
+  left: 11px;
+  transform: translateY(-50%);
+  color: var(--ink-faint);
+  pointer-events: none;
+}
+
+.search-input {
+  width: 100%;
+  height: 32px;
+  padding: 0 12px 0 32px;
+  border: 1px solid var(--hairline);
+  border-radius: 9px;
+  background: rgba(26, 34, 51, 0.04);
+  font: inherit;
+  font-size: 13px;
+  color: var(--ink);
+  outline: none;
+  transition: border-color 120ms ease, background 120ms ease;
+}
+
+.search-input::placeholder {
+  color: var(--ink-faint);
+}
+
+.search-input:focus {
+  border-color: var(--accent);
+  background: var(--surface-solid);
+  box-shadow: 0 0 0 3px var(--accent-soft);
+}
+
+.search-results {
+  position: absolute;
+  top: calc(100% + 8px);
+  left: 0;
+  right: 0;
+  z-index: 40;
+  list-style: none;
+  margin: 0;
+  padding: 6px;
+  max-height: 340px;
+  overflow-y: auto;
+}
+
+.search-empty {
+  padding: 8px 10px;
+  font-size: 13px;
+  color: var(--ink-faint);
+}
+
+.search-result {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 10px;
+  width: 100%;
+  padding: 7px 10px;
+  border: none;
+  border-radius: 8px;
+  background: transparent;
+  font: inherit;
+  font-size: 13.5px;
+  color: var(--ink);
+  text-align: left;
+  cursor: pointer;
+}
+
+.search-result.is-active {
+  background: var(--accent-soft);
+}
+
+.search-result-name {
+  font-weight: 500;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.search-result-meta {
+  flex: none;
+  display: flex;
+  align-items: center;
+  gap: 7px;
+}
+
+.search-result-sal {
+  font-size: 10.5px;
+  font-variant-numeric: tabular-nums;
+  color: var(--ink-faint);
+}
+
+.search-result-state {
+  font-size: 10.5px;
+  font-weight: 600;
+  letter-spacing: 0.05em;
+  color: var(--ink-soft);
+  background: rgba(26, 34, 51, 0.06);
+  border-radius: 999px;
+  padding: 2px 7px;
+}
+
 .header-metric {
   font-weight: 600;
   font-size: 14px;
@@ -133,14 +290,21 @@ body {
 .left-rail {
   position: absolute;
   top: 68px;
+  /* Stop above the legend (bottom-left) so the rail never sits under it. */
+  bottom: 196px;
   left: 16px;
   z-index: 10;
   display: flex;
   flex-direction: column;
   gap: 12px;
   width: 232px;
-  max-height: calc(100% - 84px);
   overflow-y: auto;
+  pointer-events: none;
+}
+
+.left-rail > * {
+  pointer-events: auto;
+  flex: none;
 }
 
 .switcher-list,
@@ -219,6 +383,266 @@ body {
   height: 15px;
   margin: 0;
   cursor: pointer;
+}
+
+/* ---------- Shortlist ---------- */
+
+.shortlist {
+  --pin: #c026d3;
+}
+
+.shortlist-head {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 8px;
+  width: 100%;
+  margin: 0;
+  padding: 0;
+  border: none;
+  background: transparent;
+  font: inherit;
+  color: var(--ink-faint);
+  cursor: pointer;
+}
+
+.shortlist-title {
+  display: flex;
+  align-items: center;
+  gap: 7px;
+  margin: 0;
+}
+
+.shortlist-count {
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: 0;
+  color: #fff;
+  background: var(--pin);
+  border-radius: 999px;
+  padding: 1px 6px;
+}
+
+.shortlist-chevron {
+  transition: transform 140ms ease;
+}
+
+.shortlist-chevron.is-collapsed {
+  transform: rotate(-90deg);
+}
+
+.shortlist-hint {
+  margin: 10px 0 0;
+  font-size: 12.5px;
+  color: var(--ink-faint);
+}
+
+.shortlist-list {
+  list-style: none;
+  margin: 8px 0 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+
+.shortlist-row {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+}
+
+.shortlist-item {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 8px;
+  flex: 1;
+  min-width: 0;
+  padding: 6px 10px;
+  border: none;
+  border-radius: 8px;
+  background: transparent;
+  font: inherit;
+  font-size: 13.5px;
+  font-weight: 500;
+  color: var(--ink);
+  text-align: left;
+  cursor: pointer;
+  transition: background 120ms ease;
+}
+
+.shortlist-item:hover {
+  background: rgba(26, 34, 51, 0.05);
+}
+
+.shortlist-item.is-active {
+  background: var(--accent-soft);
+}
+
+.shortlist-name {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.shortlist-state {
+  flex: none;
+  font-size: 10.5px;
+  font-weight: 600;
+  letter-spacing: 0.05em;
+  color: var(--ink-faint);
+}
+
+.shortlist-remove {
+  flex: none;
+  width: 22px;
+  height: 22px;
+  border: none;
+  border-radius: 50%;
+  background: transparent;
+  color: var(--ink-faint);
+  font-size: 14px;
+  line-height: 1;
+  cursor: pointer;
+  transition: background 120ms ease, color 120ms ease;
+}
+
+.shortlist-remove:hover {
+  background: rgba(26, 34, 51, 0.08);
+  color: var(--ink);
+}
+
+.shortlist-compare {
+  width: 100%;
+  margin-top: 10px;
+  padding: 7px 10px;
+  border: 1px solid var(--hairline);
+  border-radius: 8px;
+  background: transparent;
+  font: inherit;
+  font-size: 12.5px;
+  font-weight: 600;
+  color: var(--accent);
+  cursor: pointer;
+  transition: background 120ms ease, border-color 120ms ease;
+}
+
+.shortlist-compare:hover {
+  background: var(--accent-soft);
+}
+
+.shortlist-compare.is-active {
+  background: var(--accent);
+  border-color: var(--accent);
+  color: #fff;
+}
+
+/* ---------- Compare table ---------- */
+
+.compare {
+  position: absolute;
+  bottom: 24px;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 18;
+  max-width: min(860px, calc(100vw - 560px));
+  padding: 14px 16px 16px;
+  animation: sheet-in 160ms ease-out;
+}
+
+@media (max-width: 1100px) {
+  .compare {
+    max-width: calc(100vw - 300px);
+    left: auto;
+    right: 16px;
+    transform: none;
+  }
+}
+
+.compare-head {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 10px;
+}
+
+.compare-title {
+  margin: 0;
+}
+
+.compare-scroll {
+  overflow-x: auto;
+  margin-top: 8px;
+}
+
+.compare-table {
+  border-collapse: separate;
+  border-spacing: 2px;
+  font-size: 12.5px;
+}
+
+.compare-table thead th {
+  padding: 2px 6px 6px;
+  text-align: left;
+  vertical-align: bottom;
+}
+
+.compare-suburb {
+  display: flex;
+  flex-direction: column;
+  gap: 1px;
+  border: none;
+  padding: 4px 6px;
+  margin: -4px -6px;
+  border-radius: 7px;
+  background: transparent;
+  font: inherit;
+  text-align: left;
+  cursor: pointer;
+}
+
+.compare-suburb:hover {
+  background: var(--accent-soft);
+}
+
+.compare-suburb-name {
+  font-weight: 600;
+  font-size: 12.5px;
+  white-space: nowrap;
+}
+
+.compare-suburb-state {
+  font-size: 10px;
+  font-weight: 600;
+  letter-spacing: 0.05em;
+  color: var(--ink-faint);
+}
+
+.compare-metric-col {
+  padding: 4px 10px 4px 0;
+  font-weight: 500;
+  font-size: 12px;
+  color: var(--ink-soft);
+  text-align: left;
+  white-space: nowrap;
+}
+
+.compare-table tr.is-active .compare-metric-col {
+  color: var(--accent);
+  font-weight: 600;
+}
+
+.compare-cell {
+  min-width: 88px;
+  padding: 5px 10px;
+  border-radius: 6px;
+  background: rgba(26, 34, 51, 0.04);
+  color: var(--ink-faint);
+  font-weight: 600;
+  font-variant-numeric: tabular-nums;
+  text-align: right;
+  white-space: nowrap;
 }
 
 /* ---------- Legend ---------- */
@@ -322,6 +746,40 @@ body {
   margin-left: 8px;
   font-weight: 500;
   color: var(--ink-faint);
+}
+
+.stat-sheet-actions {
+  flex: none;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.pin-btn {
+  flex: none;
+  display: grid;
+  place-items: center;
+  width: 26px;
+  height: 26px;
+  border: none;
+  border-radius: 50%;
+  background: rgba(26, 34, 51, 0.06);
+  color: var(--ink-soft);
+  cursor: pointer;
+  transition: background 120ms ease, color 120ms ease;
+}
+
+.pin-btn:hover {
+  background: rgba(26, 34, 51, 0.12);
+}
+
+.pin-btn.is-pinned {
+  background: rgba(192, 38, 211, 0.12);
+  color: #c026d3;
+}
+
+.pin-btn.is-pinned:hover {
+  background: rgba(192, 38, 211, 0.2);
 }
 
 .close-btn {

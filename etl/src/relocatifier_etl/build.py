@@ -95,11 +95,13 @@ def build_metrics_json(
     metric_defs = populated
 
     suburb_entries: dict[str, dict] = {}
-    for row in suburbs.itertuples():
+    centres = suburbs.geometry.representative_point()
+    for row, centre in zip(suburbs.itertuples(), centres):
         suburb_values = values.get(row.sal_code, {})
         suburb_entries[row.sal_code] = {
             "name": row.name,
             "state": row.state,
+            "centre": [round(centre.x, 4), round(centre.y, 4)],
             "values": {metric: suburb_values.get(metric) for metric in metric_defs},
         }
 

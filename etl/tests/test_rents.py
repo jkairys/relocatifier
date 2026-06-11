@@ -11,7 +11,9 @@ from shapely.geometry import box
 
 from relocatifier_etl.source_modules.rents import (
     dominant_zone_by_area,
+    fill_missing_from_postcodes,
     parse_nsw_bond_rows,
+    parse_rta_postcode_rents,
     parse_rta_suburb_rents,
     pick_house_rent,
     postcode_medians,
@@ -81,6 +83,81 @@ class TestPickHouseRent:
 
     def test_empty_series(self):
         assert pick_house_rent({}) is None
+
+
+# --- RTA postcode-rents sheet parsing -----------------------------------------
+
+# Layout mirrors "1 pc-rents": same shape as the suburb sheet but the entity
+# column is headed "Postcode" and holds numbers.
+RTA_PC_ROWS = [
+    (None, "Contents", None, None, None, None, None, None),
+    (None, "Median rents, by Postcode", None, None, None, None, None, None),
+    (None, None, "Postcode", "Dwelling", None, None, None, None),
+    (None, None, None, None, "Jun", "Sep", "Dec", "Mar"),
+    (None, None, None, None, 2025, 2025, 2025, 2026),
+    (None, None, None, None, None, None, None, None),
+    (None, None, 4560, "House 3", 640, 650, "", 680),
+    (None, None, 4560, "House 4", 700, 720, 740, 760),
+    (None, None, 4560, "All dwellings", 600, 610, 620, 630),
+    (None, None, "4870", "House 4", 500, 510, 520, 530),  # postcode as string
+    (None, None, 870, "House 3", 450, 455, 460, 465),     # zero-padded to 0870
+    (None, None, "Total", "House 3", 999, 999, 999, 999), # non-numeric: skipped
+    (None, None, 4561, "Flat 2", 400, 410, 420, 430),
+]
+
+
+class TestParseRtaPostcodeRents:
+    def test_latest_quarter_label(self):
+        quarter, _ = parse_rta_postcode_rents(RTA_PC_ROWS)
+        assert quarter == "2026-Q1"
+
+    def test_postcodes_normalised_to_padded_strings(self):
+        _, postcodes = parse_rta_postcode_rents(RTA_PC_ROWS)
+        assert postcodes["4560"]["House 3"] == [640.0, 650.0, None, 680.0]
+        assert postcodes["4870"]["House 4"] == [500.0, 510.0, 520.0, 530.0]
+        assert "0870" in postcodes
+
+    def test_non_numeric_entities_skipped(self):
+        _, postcodes = parse_rta_postcode_rents(RTA_PC_ROWS)
+        assert "Total" not in postcodes
+
+    def test_same_house_series_rules_apply(self):
+        _, postcodes = parse_rta_postcode_rents(RTA_PC_ROWS)
+        assert pick_house_rent(postcodes["4560"]) == 680.0
+        assert pick_house_rent(postcodes["4561"]) is None  # flats never used
+
+    def test_missing_header_raises(self):
+        with pytest.raises(ValueError, match="header"):
+            parse_rta_postcode_rents([(None, "no", "headers", "here")])
+
+    def test_suburb_parser_ignores_postcode_sheet(self):
+        # The Suburb wrapper must not accidentally accept the postcode header.
+        with pytest.raises(ValueError, match="header"):
+            parse_rta_suburb_rents(RTA_PC_ROWS)
+
+
+class TestFillMissingFromPostcodes:
+    SAL_TO_POSTCODE = {"30001": "4560", "30002": "4560", "30003": "4870"}
+
+    def test_fills_only_missing_sals(self):
+        # 30001 already has a suburb-sheet value: it must win.
+        filled = fill_missing_from_postcodes(
+            {"30001": 780.0},
+            self.SAL_TO_POSTCODE,
+            {"4560": 680.0, "4870": 530.0},
+        )
+        assert filled == {"30002": 680.0, "30003": 530.0}
+
+    def test_postcode_without_house_median_gives_nothing(self):
+        # A suppressed/absent postcode median must not be inherited from
+        # some lesser-overlap postcode.
+        filled = fill_missing_from_postcodes(
+            {}, self.SAL_TO_POSTCODE, {"4560": 680.0, "4870": None}
+        )
+        assert filled == {"30001": 680.0, "30002": 680.0}
+
+    def test_empty_inputs(self):
+        assert fill_missing_from_postcodes({}, {}, {}) == {}
 
 
 # --- NSW bond lodgement parsing ----------------------------------------------

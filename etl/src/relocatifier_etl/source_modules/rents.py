@@ -12,6 +12,14 @@ quarter within the last four (series preference beats recency: a year-old
 Suburb names map to SAL via ctx.name_lookup, exact match only (ADR-0001);
 unmatched counts are reported.
 
+The RTA suppresses thin markets at suburb level (only ~500 of 3,200 QLD SALs
+get a suburb median), but the same workbook carries a POSTCODE-level sheet
+("1 pc-rents", identical layout) with much broader coverage. QLD SALs with
+no suburb-sheet house rent fall back to the house median (same series
+preference and lookback) of their dominant-overlap POA 2021 postcode —
+suburb-sheet values always win over postcode values, and the fallback is
+flagged as approximated in the metric notes per ADR-0001.
+
 NSW: Fair Trading publishes individual rental bond lodgements monthly at
 POSTCODE level (no suburb). We pool the most recent 12 monthly files, keep
 dwelling type "H" (house), and take the median weekly rent per postcode
@@ -98,6 +106,10 @@ METRICS = {
             "QLD: RTA median rent for new tenancies, 3-bedroom houses "
             "(falling back to 4- then 2-bedroom where the 3-bed series is "
             "suppressed), latest published quarter within the past year. "
+            "Where the RTA suppresses the suburb entirely, the suburb "
+            "inherits the postcode-level median (same series rules) of the "
+            "postcode with the largest area overlap — approximated, as for "
+            "NSW below. "
             "NSW: approximated — median weekly rent of house bond "
             "lodgements over the last 12 months for the postcode with the "
             "largest area overlap with the suburb; suburbs straddling "
@@ -123,6 +135,7 @@ MIN_NSW_BONDS = 5
 _QUARTER_BY_MONTH = {"Mar": 1, "Jun": 2, "Sep": 3, "Dec": 4}
 
 _RTA_SUBURB_SHEET = "4 sub-rents"
+_RTA_POSTCODE_SHEET = "1 pc-rents"
 _NSW_HEADER = ("Lodgement Date", "Postcode", "Dwelling Type", "Bedrooms", "Weekly Rent")
 
 
@@ -136,28 +149,46 @@ def _cell_number(value) -> float | None:
     return None
 
 
-def parse_rta_suburb_rents(
-    rows: Iterable[tuple], lookback: int = RTA_LOOKBACK_QUARTERS
-) -> tuple[str, dict[str, dict[str, list[float | None]]]]:
-    """Parse the RTA "4 sub-rents" sheet rows.
+def _suburb_key(value) -> str | None:
+    """Suburb-sheet entity cells: any non-empty string is a suburb name."""
+    return value.strip() if isinstance(value, str) else None
 
-    Returns (latest_quarter_label, {suburb: {dwelling_series: values}}) where
+
+def _postcode_key(value) -> str | None:
+    """Postcode-sheet entity cells: numbers (or digit strings) zero-padded."""
+    if isinstance(value, (int, float)) and not isinstance(value, bool):
+        return f"{int(value):04d}"
+    if isinstance(value, str) and value.strip().isdigit():
+        return f"{int(value.strip()):04d}"
+    return None
+
+
+def _parse_rta_rents(
+    rows: Iterable[tuple], entity_header: str, entity_key, lookback: int
+) -> tuple[str, dict[str, dict[str, list[float | None]]]]:
+    """Parse an RTA median-rents sheet (suburb and postcode sheets share the
+    layout, differing only in the entity column's header and cell type).
+
+    Returns (latest_quarter_label, {entity: {dwelling_series: values}}) where
     values are the last `lookback` quarters' medians oldest-first (None =
     suppressed). Row tuples come from openpyxl values_only iteration; layout
-    (located by header text, not fixed positions): a "Suburb"/"Dwelling"
+    (located by header text, not fixed positions): an entity/"Dwelling"
     header row, then a month row and a year row over the quarter columns,
     then data rows.
     """
     rows = iter(rows)
-    suburb_col = dwelling_col = None
+    entity_col = dwelling_col = None
     for row in rows:
         cells = [c.strip() if isinstance(c, str) else c for c in row]
-        if "Suburb" in cells and "Dwelling" in cells:
-            suburb_col = cells.index("Suburb")
+        if entity_header in cells and "Dwelling" in cells:
+            entity_col = cells.index(entity_header)
             dwelling_col = cells.index("Dwelling")
             break
-    if suburb_col is None:
-        raise ValueError("RTA suburb sheet: no Suburb/Dwelling header row found")
+    if entity_col is None:
+        raise ValueError(
+            f"RTA {entity_header.lower()} sheet: "
+            f"no {entity_header}/Dwelling header row found"
+        )
 
     months = next(rows, ())
     years = next(rows, ())
@@ -169,20 +200,38 @@ def parse_rta_suburb_rents(
         and isinstance(years[i], int)
     ]
     if not quarter_cols:
-        raise ValueError("RTA suburb sheet: no quarter columns found")
+        raise ValueError(f"RTA {entity_header.lower()} sheet: no quarter columns found")
     recent = quarter_cols[-lookback:]
     latest = recent[-1]
     quarter_label = f"{years[latest]}-Q{_QUARTER_BY_MONTH[months[latest]]}"
 
-    suburbs: dict[str, dict[str, list[float | None]]] = {}
+    entities: dict[str, dict[str, list[float | None]]] = {}
     for row in rows:
-        suburb = row[suburb_col] if len(row) > suburb_col else None
+        entity = entity_key(row[entity_col]) if len(row) > entity_col else None
         dwelling = row[dwelling_col] if len(row) > dwelling_col else None
-        if not isinstance(suburb, str) or not isinstance(dwelling, str):
+        if entity is None or not isinstance(dwelling, str):
             continue
         values = [_cell_number(row[i]) if len(row) > i else None for i in recent]
-        suburbs.setdefault(suburb.strip(), {})[dwelling.strip()] = values
-    return quarter_label, suburbs
+        entities.setdefault(entity, {})[dwelling.strip()] = values
+    return quarter_label, entities
+
+
+def parse_rta_suburb_rents(
+    rows: Iterable[tuple], lookback: int = RTA_LOOKBACK_QUARTERS
+) -> tuple[str, dict[str, dict[str, list[float | None]]]]:
+    """Parse the RTA "4 sub-rents" sheet rows: {suburb: {series: values}}."""
+    return _parse_rta_rents(rows, "Suburb", _suburb_key, lookback)
+
+
+def parse_rta_postcode_rents(
+    rows: Iterable[tuple], lookback: int = RTA_LOOKBACK_QUARTERS
+) -> tuple[str, dict[str, dict[str, list[float | None]]]]:
+    """Parse the RTA "1 pc-rents" sheet rows: {postcode: {series: values}}.
+
+    Postcodes arrive as numbers in the sheet and are returned as zero-padded
+    4-digit strings, matching the POA boundary codes.
+    """
+    return _parse_rta_rents(rows, "Postcode", _postcode_key, lookback)
 
 
 def pick_house_rent(series: dict[str, list[float | None]]) -> float | None:
@@ -196,6 +245,25 @@ def pick_house_rent(series: dict[str, list[float | None]]) -> float | None:
             if value is not None:
                 return value
     return None
+
+
+def fill_missing_from_postcodes(
+    values: dict[str, float],
+    sal_to_postcode: dict[str, str],
+    postcode_rents: dict[str, float | None],
+) -> dict[str, float]:
+    """Postcode-derived rents for SALs that lack a suburb-sheet value.
+
+    Suburb-sheet values always win: SALs already present in `values` are never
+    overridden. A SAL whose dominant postcode has no house median gets nothing
+    (it does not inherit some lesser-overlap postcode's value).
+    """
+    return {
+        sal_code: rent
+        for sal_code, postcode in sal_to_postcode.items()
+        if sal_code not in values
+        and (rent := postcode_rents.get(postcode)) is not None
+    }
 
 
 def parse_nsw_bond_rows(rows: Iterable[tuple]) -> Iterator[tuple[str, float]]:
@@ -280,17 +348,34 @@ def _require(ctx: BuildContext, source: Source):
     return path
 
 
+def _load_poa(ctx: BuildContext, prefix: str) -> gpd.GeoDataFrame:
+    """POA 2021 polygons whose postcode starts with `prefix`, as a frame with
+    columns postcode, geometry (POA covers geographic postcodes only)."""
+    poa = gpd.read_file(f"zip://{_require(ctx, POA_BOUNDARIES)}")
+    poa = poa[poa["POA_CODE21"].str.startswith(prefix) & poa.geometry.notna()].copy()
+    return poa.rename(columns={"POA_CODE21": "postcode"})
+
+
 def _build_qld(ctx: BuildContext) -> dict[str, float]:
     wb = openpyxl.load_workbook(_require(ctx, RTA_RENTS), read_only=True)
     try:
-        rows = wb[_RTA_SUBURB_SHEET].iter_rows(values_only=True)
-        quarter, suburbs = parse_rta_suburb_rents(rows)
+        quarter, suburbs = parse_rta_suburb_rents(
+            wb[_RTA_SUBURB_SHEET].iter_rows(values_only=True)
+        )
+        pc_quarter, postcodes = parse_rta_postcode_rents(
+            wb[_RTA_POSTCODE_SHEET].iter_rows(values_only=True)
+        )
     finally:
         wb.close()
     if quarter != VINTAGES["rents_qld"]:
         raise SystemExit(
             f"RTA workbook latest quarter is {quarter} but VINTAGES says "
             f"{VINTAGES['rents_qld']} — update rents.VINTAGES"
+        )
+    if pc_quarter != quarter:
+        raise SystemExit(
+            f"RTA postcode sheet latest quarter is {pc_quarter} but the "
+            f"suburb sheet says {quarter} — workbook is inconsistent"
         )
 
     values: dict[str, float] = {}
@@ -310,6 +395,25 @@ def _build_qld(ctx: BuildContext) -> dict[str, float]:
         f"[rents] QLD {quarter}: {matched} suburbs matched to SAL, "
         f"{unmatched} unmatched by name, {no_series} without a house series"
     )
+
+    # Postcode fallback for RTA-suppressed suburbs: each QLD SAL still missing
+    # a rent gets its dominant-overlap postcode's house median. "4xxx" covers
+    # all geographic QLD postcodes (QLD's 9xxx ranges are non-geographic and
+    # absent from POA), so border SALs compete among QLD postcodes only —
+    # consistent with the RTA data being QLD-only.
+    postcode_rents = {pc: pick_house_rent(series) for pc, series in postcodes.items()}
+    qld = ctx.suburbs[ctx.suburbs["state"] == "QLD"]
+    missing = qld[~qld["sal_code"].isin(values)]
+    sal_to_postcode = dominant_zone_by_area(
+        missing.to_crs(epsg=3577), _load_poa(ctx, "4").to_crs(epsg=3577), "postcode"
+    )
+    fallback = fill_missing_from_postcodes(values, sal_to_postcode, postcode_rents)
+    values.update(fallback)
+    print(
+        f"[rents] QLD postcode fallback: {len(missing)} suburbs without a suburb "
+        f"median, {len(sal_to_postcode)} assigned a dominant postcode, "
+        f"{len(fallback)} filled from postcode medians"
+    )
     return values
 
 
@@ -328,11 +432,9 @@ def _build_nsw(ctx: BuildContext) -> dict[str, float]:
         f"{len(medians)} postcodes with >= {MIN_NSW_BONDS} bonds"
     )
 
-    # POA 2021 boundaries; "2xxx" covers NSW (plus ACT, which loses the
-    # area-overlap contest outside the border fringe).
-    poa = gpd.read_file(f"zip://{_require(ctx, POA_BOUNDARIES)}")
-    poa = poa[poa["POA_CODE21"].str.startswith("2") & poa.geometry.notna()].copy()
-    poa = poa.rename(columns={"POA_CODE21": "postcode"})
+    # "2xxx" covers NSW (plus ACT, which loses the area-overlap contest
+    # outside the border fringe).
+    poa = _load_poa(ctx, "2")
 
     nsw = ctx.suburbs[ctx.suburbs["state"] == "NSW"]
     sal_to_postcode = dominant_zone_by_area(

@@ -6,6 +6,8 @@ interface StatSheetProps {
   artifact: MetricsArtifact;
   picked: PickedSuburb;
   selectedMetricId: string;
+  pinned: boolean;
+  onTogglePin: () => void;
   onClose: () => void;
 }
 
@@ -15,6 +17,8 @@ export function StatSheet({
   artifact,
   picked,
   selectedMetricId,
+  pinned,
+  onTogglePin,
   onClose,
 }: StatSheetProps) {
   const record = artifact.suburbs[picked.salCode];
@@ -31,14 +35,36 @@ export function StatSheet({
             <span className="stat-sheet-sal">SAL {picked.salCode}</span>
           </p>
         </div>
-        <button
-          type="button"
-          className="close-btn"
-          onClick={onClose}
-          aria-label="Close stat sheet"
-        >
-          ×
-        </button>
+        <div className="stat-sheet-actions">
+          <button
+            type="button"
+            className={`pin-btn${pinned ? " is-pinned" : ""}`}
+            onClick={onTogglePin}
+            aria-pressed={pinned}
+            aria-label={
+              pinned ? `Unpin ${name} from shortlist` : `Pin ${name} to shortlist`
+            }
+            title={pinned ? "Remove from shortlist" : "Add to shortlist"}
+          >
+            <svg viewBox="0 0 24 24" width="15" height="15" aria-hidden="true">
+              <path
+                d="M12 3.6l2.5 5.06 5.6.81-4.05 3.95.96 5.57L12 16.36 7 18.99l.95-5.57L3.9 9.47l5.6-.81L12 3.6z"
+                fill={pinned ? "currentColor" : "none"}
+                stroke="currentColor"
+                strokeWidth="1.6"
+                strokeLinejoin="round"
+              />
+            </svg>
+          </button>
+          <button
+            type="button"
+            className="close-btn"
+            onClick={onClose}
+            aria-label="Close stat sheet"
+          >
+            ×
+          </button>
+        </div>
       </div>
       <dl className="stat-list">
         {switcherMetricIds(artifact).map((id) => {

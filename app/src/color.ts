@@ -57,6 +57,30 @@ export function colorFor(value: number | null, def: MetricDef | undefined): stri
   return rampColor(badness(value, def));
 }
 
+/**
+ * Ink or white, whichever reads better on the given ramp/no-data colour.
+ * Accepts the `rgb(r,g,b)` strings rampColor emits and 6-digit hex.
+ */
+export function readableTextOn(color: string): string {
+  let r = 0;
+  let g = 0;
+  let b = 0;
+  const rgb = /^rgb\((\d+),(\d+),(\d+)\)$/.exec(color);
+  if (rgb) {
+    r = Number(rgb[1]);
+    g = Number(rgb[2]);
+    b = Number(rgb[3]);
+  } else if (color.startsWith("#") && color.length === 7) {
+    r = parseInt(color.slice(1, 3), 16);
+    g = parseInt(color.slice(3, 5), 16);
+    b = parseInt(color.slice(5, 7), 16);
+  } else {
+    return "#1a2233";
+  }
+  const luminance = (0.299 * r + 0.587 * g + 0.114 * b) / 255;
+  return luminance > 0.55 ? "#1a2233" : "#ffffff";
+}
+
 /** CSS gradient for the legend bar, oriented low-value → high-value. */
 export function legendGradient(def: MetricDef): string {
   const steps = 9;

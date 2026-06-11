@@ -45,7 +45,7 @@ The ETL emits to `app/public/data/`:
     }
   },
   "suburbs": {
-    "<sal_code>": {"name": "Bli Bli", "state": "QLD", "values": {"median_age": 38, "...": null}}
+    "<sal_code>": {"name": "Bli Bli", "state": "QLD", "centre": [153.03, -26.62], "values": {"median_age": 38, "...": null}}
   }
 }
 ```
