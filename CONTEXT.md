@@ -23,6 +23,9 @@ The 10,000-foot research mode: comparing Metrics across every Suburb in the Sear
 **Watchlist**:
 A set of shortlisted Suburbs that receive fresher, deeper data collection — recent sales, live listings, property-to-school proximity. The zoom-in mode that follows Discovery.
 
+**Yield**:
+Gross rental yield for a Suburb: median weekly house rent × 52 ÷ median house price. Indicative, not investment-grade — computed from suburb medians, used to find suburbs where buy-then-rent-out is plausibly neutrally or positively geared.
+
 **School**:
 A campus identified by its ACARA ID, with location and profile (ICSEA, enrolments, sector) taken from ACARA's official tables. School names are display labels, never identifiers.
 
