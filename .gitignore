@@ -141,3 +141,7 @@ dist
 vite.config.js.timestamp-*
 vite.config.ts.timestamp-*
 .vite/
+
+# Data artifacts and raw downloads
+etl/data/
+app/public/data/

@@ -1,0 +1,26 @@
+version: '3'
+
+tasks:
+  etl:fetch:
+    desc: Download raw source data (cached)
+    dir: etl
+    cmds:
+      - uv run etl fetch
+
+  etl:build:
+    desc: Build artifacts (PMTiles + metrics.json) into app/public/data/
+    dir: etl
+    cmds:
+      - uv run etl build
+
+  app:dev:
+    desc: Run the frontend dev server
+    dir: app
+    cmds:
+      - npm run dev
+
+  app:build:
+    desc: Production build of the frontend
+    dir: app
+    cmds:
+      - npm run build
