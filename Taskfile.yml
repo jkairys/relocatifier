@@ -13,6 +13,18 @@ tasks:
     cmds:
       - uv run etl build
 
+  scraper:dev:
+    desc: Run the listings-acquisition control-plane service (uvicorn on :8210)
+    dir: scraper
+    cmds:
+      - uv run uvicorn scraper.api:app --port 8210 --reload
+
+  scraper:test:
+    desc: Run scraper unit tests (no network)
+    dir: scraper
+    cmds:
+      - uv run pytest
+
   app:dev:
     desc: Run the frontend dev server
     dir: app

@@ -57,3 +57,37 @@ export interface PickedSuburb {
 export interface MapApi {
   flyTo(centre: [number, number], zoom?: number): void;
 }
+
+/* ---------- Recent sales artifact (issue #3) ---------- */
+
+/** One recently-sold listing. Any field may be null except `address`. */
+export interface SaleRecord {
+  address: string;
+  /** Numeric sale price; null when suppressed ("price withheld"). */
+  price: number | null;
+  price_display: string | null;
+  bedrooms: number | null;
+  bathrooms: number | null;
+  parking: number | null;
+  land_size_sqm: number | null;
+  property_type: string | null;
+  /** ISO date (YYYY-MM-DD); null when unknown. */
+  sale_date: string | null;
+}
+
+/** Sales for one suburb, keyed by SAL code in the artifact. */
+export interface SalesSuburb {
+  name: string;
+  state: string;
+  oth_slug: string;
+  /** ISO timestamp of the last successful fetch for this suburb. */
+  fetched_at: string;
+  /** Sorted by sale_date desc, nulls last; everything <= 12 months old. */
+  sales: SaleRecord[];
+}
+
+export interface SalesArtifact {
+  schema_version: number;
+  generated_at: string;
+  suburbs: Record<string, SalesSuburb>;
+}

@@ -1,0 +1,13 @@
+{
+  "schema_version": 1,
+  "vintages": {},
+  "metrics": {},
+  "suburbs": {
+    "30900": {"name": "Bli Bli", "state": "QLD", "centre": [153.0, -26.6], "values": {}},
+    "31234": {"name": "Buderim", "state": "QLD", "centre": [153.0, -26.7], "values": {}},
+    "39999": {"name": "Newtown", "state": "QLD", "centre": [151.9, -27.6], "values": {}},
+    "12042": {"name": "Newtown", "state": "NSW", "centre": [151.18, -33.9], "values": {}},
+    "10088": {"name": "Mosman", "state": "NSW", "centre": [151.24, -33.83], "values": {}},
+    "49999": {"name": "Nowhereville", "state": "QLD", "centre": [150.0, -25.0], "values": {}}
+  }
+}

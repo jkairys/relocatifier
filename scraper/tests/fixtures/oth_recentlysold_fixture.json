@@ -1,0 +1,1851 @@
+{
+  "content": [
+    {
+      "category": "Property",
+      "clPropertyId": "6701278",
+      "othPropertyId": "3177937",
+      "address": {
+        "formattedAddress": "64 GUTHRIE ST, PADDINGTON, QLD 4064",
+        "streetNumber": "64",
+        "streetName": "GUTHRIE",
+        "streetType": "ST",
+        "suburb": "PADDINGTON",
+        "stateCode": "QLD",
+        "postCode": "4064",
+        "location": {
+          "lat": -27.46347591,
+          "lon": 153.00265293
+        }
+      },
+      "beds": 2,
+      "baths": 1,
+      "carSpaces": 1,
+      "landSizeUnit": "squareMeter",
+      "yearBuilt": 1910,
+      "type": "House",
+      "legalAttributes": {},
+      "guesstimate": {
+        "price": 1910000,
+        "calculationDate": "2026-05-04",
+        "errorRate": 0.09,
+        "fromPrice": 1800000,
+        "toPrice": 2000000,
+        "confidence": "Medium-High"
+      },
+      "lastSale": {
+        "eventDate": "2026-04-28",
+        "salePrice": 1950000,
+        "saleSource": "RP",
+        "sellingAgency": {
+          "name": "Place Property Paddington",
+          "allowManualListings": false,
+          "agents": [],
+          "links": []
+        },
+        "type": "SoldEvent"
+      },
+      "recentlySold": true,
+      "isRestrictedSource": false,
+      "isSoldListing": false,
+      "hasVirtualTour": false,
+      "links": [
+        {
+          "rel": "self",
+          "href": "https://api-gateway-alb.cnsr-onthehouse-prod.aws.corelogic.io:443/properties/3177937"
+        },
+        {
+          "rel": "mainImage",
+          "href": "https://images.corelogic.asia/470x313/filters:stretch()/filters:watermark(cla-digital-assets-prod,watermarks/logo.png,-2p,-2p,30,16,16)/assets/perm/ffyqen56jui6ndhaqfuesirhha?signature=d8fa21800069a40b90b980c583b33eabcb2eeeea8931facbb9a7ddad040bfe6e"
+        },
+        {
+          "rel": "othWebUrl",
+          "href": "https://www.onthehouse.com.au/property/qld/paddington-4064/64-guthrie-st-paddington-qld-4064-3177937"
+        }
+      ],
+      "id": "3177937"
+    },
+    {
+      "category": "Property",
+      "clPropertyId": "6700336",
+      "othPropertyId": "3711495",
+      "address": {
+        "formattedAddress": "1/267 GIVEN TCE, PADDINGTON, QLD 4064",
+        "unitNumber": "1",
+        "streetNumber": "267",
+        "streetName": "GIVEN",
+        "streetType": "TCE",
+        "suburb": "PADDINGTON",
+        "stateCode": "QLD",
+        "postCode": "4064",
+        "location": {
+          "lat": -27.46067007,
+          "lon": 153.00406446
+        }
+      },
+      "beds": 0,
+      "baths": 0,
+      "carSpaces": 12,
+      "landSizeUnit": "squareMeter",
+      "type": "Commercial",
+      "legalAttributes": {},
+      "lastSale": {
+        "eventDate": "2026-04-24",
+        "salePrice": 0,
+        "saleSource": "RP",
+        "sellingAgency": {
+          "agencyId": "25227",
+          "name": "Ray White Metro North",
+          "logo": "https://img.othsolutions.com.au/agent-centre/franchise/ray_white/logo.png",
+          "accountStatus": "ACTIVE",
+          "allowManualListings": false,
+          "agents": [],
+          "links": []
+        },
+        "type": "SoldEvent"
+      },
+      "lastRental": {
+        "eventDate": "2014-04-29",
+        "rentedPrice": 1916,
+        "type": "RentedEvent"
+      },
+      "recentlySold": true,
+      "isRestrictedSource": false,
+      "isSoldListing": false,
+      "hasVirtualTour": false,
+      "links": [
+        {
+          "rel": "self",
+          "href": "https://api-gateway-alb.cnsr-onthehouse-prod.aws.corelogic.io:443/properties/3711495"
+        },
+        {
+          "rel": "mainImage",
+          "href": "https://images.corelogic.asia/470x313/filters:stretch()/filters:watermark(cla-digital-assets-prod,watermarks/logo.png,-2p,-2p,30,16,16)/assets/perm/smgjcf55eyi6nicqu4gw3fgvce?signature=1e39f15e42327c78ae33930dee093ceb41a8695d9c040da68395141bea6b12db"
+        },
+        {
+          "rel": "othWebUrl",
+          "href": "https://www.onthehouse.com.au/property/qld/paddington-4064/1-267-given-tce-paddington-qld-4064-3711495"
+        }
+      ],
+      "id": "3711495"
+    },
+    {
+      "category": "Property",
+      "clPropertyId": "6700819",
+      "othPropertyId": "3176546",
+      "address": {
+        "formattedAddress": "19 GLADSTONE ST, PADDINGTON, QLD 4064",
+        "streetNumber": "19",
+        "streetName": "GLADSTONE",
+        "streetType": "ST",
+        "suburb": "PADDINGTON",
+        "stateCode": "QLD",
+        "postCode": "4064",
+        "location": {
+          "lat": -27.46021107,
+          "lon": 153.00040334
+        }
+      },
+      "beds": 4,
+      "baths": 3,
+      "carSpaces": 2,
+      "landSizeUnit": "squareMeter",
+      "yearBuilt": 1910,
+      "type": "House",
+      "legalAttributes": {},
+      "guesstimate": {
+        "price": 2500000,
+        "calculationDate": "2026-05-04",
+        "errorRate": 0.09,
+        "fromPrice": 2400000,
+        "toPrice": 2600000,
+        "confidence": "Medium-High"
+      },
+      "lastSale": {
+        "eventDate": "2026-04-15",
+        "salePrice": 2520000,
+        "saleSource": "RP",
+        "sellingAgency": {
+          "agencyId": "10755",
+          "name": "Place West",
+          "logo": "https://img.othsolutions.com.au/agent-centre/agency/10755/logo.png",
+          "accountStatus": "ACTIVE",
+          "allowManualListings": false,
+          "agents": [],
+          "links": []
+        },
+        "type": "SoldEvent"
+      },
+      "lastRental": {
+        "eventDate": "2015-11-25",
+        "rentedPrice": 880,
+        "type": "RentedEvent"
+      },
+      "recentlySold": true,
+      "isRestrictedSource": false,
+      "isSoldListing": false,
+      "hasVirtualTour": false,
+      "links": [
+        {
+          "rel": "self",
+          "href": "https://api-gateway-alb.cnsr-onthehouse-prod.aws.corelogic.io:443/properties/3176546"
+        },
+        {
+          "rel": "mainImage",
+          "href": "https://images.corelogic.asia/470x313/filters:stretch()/filters:watermark(cla-digital-assets-prod,watermarks/logo.png,-2p,-2p,30,16,16)/assets/perm/tg3ab2icqei6vdn7hwhahmdd6a?signature=98da517805889d43ef6a515dfea8e74676ccc79b6a71bb424e4673630849db2b"
+        },
+        {
+          "rel": "othWebUrl",
+          "href": "https://www.onthehouse.com.au/property/qld/paddington-4064/19-gladstone-st-paddington-qld-4064-3176546"
+        }
+      ],
+      "id": "3176546"
+    },
+    {
+      "category": "Property",
+      "clPropertyId": "6701719",
+      "othPropertyId": "4079718",
+      "address": {
+        "formattedAddress": "12 HAZLEWOOD ST, PADDINGTON, QLD 4064",
+        "streetNumber": "12",
+        "streetName": "HAZLEWOOD",
+        "streetType": "ST",
+        "suburb": "PADDINGTON",
+        "stateCode": "QLD",
+        "postCode": "4064",
+        "location": {
+          "lat": -27.45799564,
+          "lon": 152.99381411
+        }
+      },
+      "beds": 3,
+      "baths": 1,
+      "carSpaces": 2,
+      "landSizeUnit": "squareMeter",
+      "yearBuilt": 1920,
+      "type": "House",
+      "legalAttributes": {},
+      "guesstimate": {
+        "price": 1940000,
+        "calculationDate": "2026-05-04",
+        "errorRate": 0.1,
+        "fromPrice": 1800000,
+        "toPrice": 2000000,
+        "confidence": "Medium-High"
+      },
+      "lastSale": {
+        "eventDate": "2026-04-10",
+        "salePrice": 1900000,
+        "saleSource": "RP",
+        "sellingAgency": {
+          "agencyId": "10755",
+          "name": "Place West",
+          "logo": "https://img.othsolutions.com.au/agent-centre/agency/10755/logo.png",
+          "accountStatus": "ACTIVE",
+          "allowManualListings": false,
+          "agents": [],
+          "links": []
+        },
+        "type": "SoldEvent"
+      },
+      "recentlySold": true,
+      "isRestrictedSource": false,
+      "isSoldListing": false,
+      "hasVirtualTour": false,
+      "links": [
+        {
+          "rel": "self",
+          "href": "https://api-gateway-alb.cnsr-onthehouse-prod.aws.corelogic.io:443/properties/4079718"
+        },
+        {
+          "rel": "mainImage",
+          "href": "https://images.corelogic.asia/470x313/filters:stretch()/filters:watermark(cla-digital-assets-prod,watermarks/logo.png,-2p,-2p,30,16,16)/assets/perm/kjegcx726qi6tduqunyh2rtobq?signature=5721cf9b7cb10c0cf01b04488969909ebc211b79c6524c18f719577a9d89e784"
+        },
+        {
+          "rel": "othWebUrl",
+          "href": "https://www.onthehouse.com.au/property/qld/paddington-4064/12-hazlewood-st-paddington-qld-4064-4079718"
+        }
+      ],
+      "id": "4079718"
+    },
+    {
+      "category": "Property",
+      "clPropertyId": "6702364",
+      "othPropertyId": "4080060",
+      "address": {
+        "formattedAddress": "148 KENNEDY TCE, PADDINGTON, QLD 4064",
+        "streetNumber": "148",
+        "streetName": "KENNEDY",
+        "streetType": "TCE",
+        "suburb": "PADDINGTON",
+        "stateCode": "QLD",
+        "postCode": "4064",
+        "location": {
+          "lat": -27.45398189,
+          "lon": 152.99332572
+        }
+      },
+      "beds": 5,
+      "baths": 4,
+      "carSpaces": 2,
+      "landSize": 698,
+      "landSizeUnit": "squareMeter",
+      "type": "House",
+      "legalAttributes": {},
+      "guesstimate": {
+        "price": 3900000,
+        "calculationDate": "2026-05-04",
+        "errorRate": 0.11,
+        "fromPrice": 3750000,
+        "toPrice": 4000000,
+        "confidence": "Medium"
+      },
+      "lastSale": {
+        "eventDate": "2026-04-08",
+        "saleSource": "OTH",
+        "sellingAgency": {
+          "agencyId": "10458",
+          "name": "Ray White Ashgrove",
+          "logo": "https://img.othsolutions.com.au/agent-centre/franchise/ray_white/logo.png",
+          "accountStatus": "ACTIVE",
+          "allowManualListings": false,
+          "agents": [
+            {
+              "uuid": "149877",
+              "firstName": "Adam",
+              "lastName": "Downes",
+              "preferences": {
+                "INCLUDE_IN_SEARCH": "true"
+              },
+              "hasInvitationDate": false,
+              "hasActivatedInvitation": false,
+              "hasCurrentValidInvitation": false,
+              "name": "Adam Downes",
+              "links": [],
+              "agencyId": "10458"
+            },
+            {
+              "uuid": "215900",
+              "firstName": "Gerard",
+              "lastName": "Sherlock",
+              "preferences": {
+                "INCLUDE_IN_SEARCH": "true"
+              },
+              "hasInvitationDate": false,
+              "hasActivatedInvitation": false,
+              "hasCurrentValidInvitation": false,
+              "name": "Gerard Sherlock",
+              "links": [],
+              "agencyId": "10458"
+            }
+          ],
+          "links": []
+        },
+        "lastListingId": "18381465",
+        "type": "SoldEvent"
+      },
+      "lastRental": {
+        "eventDate": "2009-05-09",
+        "rentedPrice": 900,
+        "type": "RentedEvent"
+      },
+      "recentlySold": true,
+      "isRestrictedSource": false,
+      "isSoldListing": true,
+      "hasVirtualTour": false,
+      "links": [
+        {
+          "rel": "self",
+          "href": "https://api-gateway-alb.cnsr-onthehouse-prod.aws.corelogic.io:443/properties/4080060"
+        },
+        {
+          "rel": "mainImage",
+          "href": "https://images.corelogic.asia/470x313/filters:stretch()/filters:watermark(cla-digital-assets-prod,watermarks/logo.png,-2p,-2p,30,16,16)/assets/perm/36ezwma5cii7dglpb6mflwnuga?signature=c1ec689f839454f9e2919536186310749c2ce8b2b5b566388ab62ef8d5ce4dad"
+        },
+        {
+          "rel": "othWebUrl",
+          "href": "https://www.onthehouse.com.au/property/qld/paddington-4064/148-kennedy-tce-paddington-qld-4064-4080060"
+        }
+      ],
+      "id": "4080060"
+    },
+    {
+      "category": "Property",
+      "clPropertyId": "6697125",
+      "othPropertyId": "3173003",
+      "address": {
+        "formattedAddress": "10 BOWLER ST, PADDINGTON, QLD 4064",
+        "streetNumber": "10",
+        "streetName": "BOWLER",
+        "streetType": "ST",
+        "suburb": "PADDINGTON",
+        "stateCode": "QLD",
+        "postCode": "4064",
+        "location": {
+          "lat": -27.45938533,
+          "lon": 153.00333423
+        }
+      },
+      "beds": 3,
+      "baths": 1,
+      "carSpaces": 1,
+      "landSizeUnit": "squareMeter",
+      "yearBuilt": 1910,
+      "type": "House",
+      "legalAttributes": {},
+      "guesstimate": {
+        "price": 1930000,
+        "calculationDate": "2026-05-04",
+        "errorRate": 0.09,
+        "fromPrice": 1800000,
+        "toPrice": 2000000,
+        "confidence": "Medium-High"
+      },
+      "lastSale": {
+        "eventDate": "2026-04-07",
+        "salePrice": 1940000,
+        "saleSource": "RP",
+        "sellingAgency": {
+          "agencyId": "10755",
+          "name": "Place West",
+          "logo": "https://img.othsolutions.com.au/agent-centre/agency/10755/logo.png",
+          "accountStatus": "ACTIVE",
+          "allowManualListings": false,
+          "agents": [],
+          "links": []
+        },
+        "type": "SoldEvent"
+      },
+      "lastRental": {
+        "eventDate": "2022-02-15",
+        "rentedPrice": 680,
+        "type": "RentedEvent"
+      },
+      "recentlySold": true,
+      "isRestrictedSource": false,
+      "isSoldListing": false,
+      "hasVirtualTour": false,
+      "links": [
+        {
+          "rel": "self",
+          "href": "https://api-gateway-alb.cnsr-onthehouse-prod.aws.corelogic.io:443/properties/3173003"
+        },
+        {
+          "rel": "mainImage",
+          "href": "https://images.corelogic.asia/470x313/filters:stretch()/filters:watermark(cla-digital-assets-prod,watermarks/logo.png,-2p,-2p,30,16,16)/assets/perm/wjj5wzehbqi6zdnld5eqqrtdpi?signature=6913a0c8324c975efa249fc652af00e0da8f964322c75f2301b2931c2a41cff5"
+        },
+        {
+          "rel": "othWebUrl",
+          "href": "https://www.onthehouse.com.au/property/qld/paddington-4064/10-bowler-st-paddington-qld-4064-3173003"
+        }
+      ],
+      "id": "3173003"
+    },
+    {
+      "category": "Property",
+      "clPropertyId": "6697933",
+      "othPropertyId": "3711818",
+      "address": {
+        "formattedAddress": "6/67 CHARLOTTE ST, PADDINGTON, QLD 4064",
+        "unitNumber": "6",
+        "streetNumber": "67",
+        "streetName": "CHARLOTTE",
+        "streetType": "ST",
+        "suburb": "PADDINGTON",
+        "stateCode": "QLD",
+        "postCode": "4064",
+        "location": {
+          "lat": -27.45976001,
+          "lon": 153.00697201
+        }
+      },
+      "beds": 2,
+      "baths": 2,
+      "carSpaces": 2,
+      "landSizeUnit": "squareMeter",
+      "yearBuilt": 1997,
+      "type": "Unit",
+      "legalAttributes": {},
+      "guesstimate": {
+        "price": 1230000,
+        "calculationDate": "2026-05-04",
+        "errorRate": 0.08,
+        "fromPrice": 1200000,
+        "toPrice": 1300000,
+        "confidence": "High"
+      },
+      "lastSale": {
+        "eventDate": "2026-04-07",
+        "salePrice": 0,
+        "saleSource": "RP",
+        "sellingAgency": {
+          "name": "Belle Property Coorparoo",
+          "allowManualListings": false,
+          "agents": [],
+          "links": []
+        },
+        "type": "SoldEvent"
+      },
+      "lastRental": {
+        "eventDate": "2018-12-14",
+        "rentedPrice": 465,
+        "type": "RentedEvent"
+      },
+      "recentlySold": true,
+      "isRestrictedSource": false,
+      "isSoldListing": false,
+      "hasVirtualTour": false,
+      "links": [
+        {
+          "rel": "self",
+          "href": "https://api-gateway-alb.cnsr-onthehouse-prod.aws.corelogic.io:443/properties/3711818"
+        },
+        {
+          "rel": "mainImage",
+          "href": "https://images.corelogic.asia/470x313/filters:stretch()/filters:watermark(cla-digital-assets-prod,watermarks/logo.png,-2p,-2p,30,16,16)/assets/perm/pibz6gbijai7doxipek4f7e7bq?signature=b7ed58ab2fb609880050c824ed72911a269314de56443d536616513e9103e086"
+        },
+        {
+          "rel": "othWebUrl",
+          "href": "https://www.onthehouse.com.au/property/qld/paddington-4064/6-67-charlotte-st-paddington-qld-4064-3711818"
+        }
+      ],
+      "id": "3711818"
+    },
+    {
+      "category": "Property",
+      "clPropertyId": "6704158",
+      "othPropertyId": "3182291",
+      "address": {
+        "formattedAddress": "14 PRINCESS ST, PADDINGTON, QLD 4064",
+        "streetNumber": "14",
+        "streetName": "PRINCESS",
+        "streetType": "ST",
+        "suburb": "PADDINGTON",
+        "stateCode": "QLD",
+        "postCode": "4064",
+        "location": {
+          "lat": -27.46096811,
+          "lon": 153.00714138
+        }
+      },
+      "beds": 3,
+      "baths": 2,
+      "carSpaces": 2,
+      "landSizeUnit": "squareMeter",
+      "yearBuilt": 1930,
+      "type": "House",
+      "legalAttributes": {},
+      "guesstimate": {
+        "price": 1890000,
+        "calculationDate": "2026-05-04",
+        "errorRate": 0.09,
+        "fromPrice": 1800000,
+        "toPrice": 2000000,
+        "confidence": "Medium-High"
+      },
+      "lastSale": {
+        "eventDate": "2026-04-07",
+        "salePrice": 1820000,
+        "saleSource": "VG",
+        "sellingAgency": {
+          "agencyId": "10755",
+          "name": "Place West",
+          "logo": "https://img.othsolutions.com.au/agent-centre/agency/10755/logo.png",
+          "accountStatus": "ACTIVE",
+          "allowManualListings": false,
+          "agents": [],
+          "links": []
+        },
+        "type": "SoldEvent"
+      },
+      "lastRental": {
+        "eventDate": "2020-05-06",
+        "rentedPrice": 720,
+        "type": "RentedEvent"
+      },
+      "recentlySold": true,
+      "isRestrictedSource": false,
+      "isSoldListing": false,
+      "hasVirtualTour": false,
+      "links": [
+        {
+          "rel": "self",
+          "href": "https://api-gateway-alb.cnsr-onthehouse-prod.aws.corelogic.io:443/properties/3182291"
+        },
+        {
+          "rel": "mainImage",
+          "href": "https://images.corelogic.asia/470x313/filters:stretch()/filters:watermark(cla-digital-assets-prod,watermarks/logo.png,-2p,-2p,30,16,16)/assets/perm/u5e5hl3sdyi6voslw7ncdmek4a?signature=27cc7e8fc37fdeb4aa93737facd4badc73f7bab8f5b981a05205879b1a88851a"
+        },
+        {
+          "rel": "othWebUrl",
+          "href": "https://www.onthehouse.com.au/property/qld/paddington-4064/14-princess-st-paddington-qld-4064-3182291"
+        }
+      ],
+      "id": "3182291"
+    },
+    {
+      "category": "Property",
+      "clPropertyId": "6702351",
+      "othPropertyId": "5051981",
+      "address": {
+        "formattedAddress": "140A KENNEDY TCE, PADDINGTON, QLD 4064",
+        "streetNumber": "140A",
+        "streetName": "KENNEDY",
+        "streetType": "TCE",
+        "suburb": "PADDINGTON",
+        "stateCode": "QLD",
+        "postCode": "4064",
+        "location": {
+          "lat": -27.4537315,
+          "lon": 152.99383836
+        }
+      },
+      "beds": 4,
+      "baths": 3,
+      "carSpaces": 3,
+      "landSize": 420,
+      "landSizeUnit": "squareMeter",
+      "type": "House",
+      "legalAttributes": {},
+      "guesstimate": {
+        "price": 2300000,
+        "calculationDate": "2026-05-04",
+        "errorRate": 0.1,
+        "fromPrice": 2200000,
+        "toPrice": 2400000,
+        "confidence": "Medium-High"
+      },
+      "lastSale": {
+        "eventDate": "2026-03-09",
+        "saleSource": "OTH",
+        "sellingAgency": {
+          "agencyId": "13862",
+          "name": "Ray White Paddington (Qld)",
+          "logo": "https://img.othsolutions.com.au/agent-centre/franchise/ray_white/logo.png",
+          "accountStatus": "ACTIVE",
+          "allowManualListings": false,
+          "agents": [
+            {
+              "uuid": "9926",
+              "firstName": "Max",
+              "lastName": "Hadgelias",
+              "preferences": {
+                "INCLUDE_IN_SEARCH": "true"
+              },
+              "hasInvitationDate": false,
+              "hasActivatedInvitation": false,
+              "hasCurrentValidInvitation": false,
+              "name": "Max Hadgelias",
+              "links": [],
+              "headShot": "https://img.othsolutions.com.au/agent-centre/agent/9926/headshot.jpg?20260507053048",
+              "agencyId": "13862"
+            }
+          ],
+          "links": []
+        },
+        "lastListingId": "17818088",
+        "type": "SoldEvent"
+      },
+      "recentlySold": true,
+      "isRestrictedSource": false,
+      "isSoldListing": true,
+      "hasVirtualTour": false,
+      "links": [
+        {
+          "rel": "self",
+          "href": "https://api-gateway-alb.cnsr-onthehouse-prod.aws.corelogic.io:443/properties/5051981"
+        },
+        {
+          "rel": "mainImage",
+          "href": "https://images.corelogic.asia/470x313/filters:stretch()/filters:watermark(cla-digital-assets-prod,watermarks/logo.png,-2p,-2p,30,16,16)/assets/perm/g73lr4k3bii63mmhyf2ydvgdyq?signature=75ddea618b4c356b72988d9310625e4e85fc8161b5edf6f73638b5c82641e196"
+        },
+        {
+          "rel": "othWebUrl",
+          "href": "https://www.onthehouse.com.au/property/qld/paddington-4064/140a-kennedy-tce-paddington-qld-4064-5051981"
+        }
+      ],
+      "id": "5051981"
+    },
+    {
+      "category": "Property",
+      "clPropertyId": "6697409",
+      "othPropertyId": "19255624",
+      "address": {
+        "formattedAddress": "15 BRINDLE ST, PADDINGTON, QLD 4064",
+        "streetNumber": "15",
+        "streetName": "BRINDLE",
+        "streetType": "ST",
+        "suburb": "PADDINGTON",
+        "stateCode": "QLD",
+        "postCode": "4064",
+        "location": {
+          "lat": -27.45519566,
+          "lon": 152.99140506
+        }
+      },
+      "beds": 4,
+      "baths": 3,
+      "carSpaces": 2,
+      "floorSize": 335,
+      "landSize": 708,
+      "landSizeUnit": "squareMeter",
+      "type": "House",
+      "legalAttributes": {},
+      "guesstimate": {
+        "price": 3700000,
+        "calculationDate": "2026-05-04",
+        "errorRate": 0.11,
+        "fromPrice": 3500000,
+        "toPrice": 3750000,
+        "confidence": "Medium"
+      },
+      "lastSale": {
+        "eventDate": "2026-03-31",
+        "saleSource": "OTH",
+        "sellingAgency": {
+          "agencyId": "22267",
+          "name": "Place New Farm",
+          "logo": "https://img.othsolutions.com.au/agent-centre/agency/22267/logo.png",
+          "accountStatus": "ACTIVE",
+          "allowManualListings": false,
+          "agents": [
+            {
+              "uuid": "179410",
+              "firstName": "Heath",
+              "lastName": "Williams",
+              "preferences": {
+                "INCLUDE_IN_SEARCH": "true"
+              },
+              "hasInvitationDate": false,
+              "hasActivatedInvitation": false,
+              "hasCurrentValidInvitation": false,
+              "name": "Heath Williams",
+              "links": [],
+              "agencyId": "22267"
+            }
+          ],
+          "links": []
+        },
+        "lastListingId": "18299371",
+        "type": "SoldEvent"
+      },
+      "recentlySold": true,
+      "isRestrictedSource": false,
+      "isSoldListing": true,
+      "hasVirtualTour": false,
+      "links": [
+        {
+          "rel": "self",
+          "href": "https://api-gateway-alb.cnsr-onthehouse-prod.aws.corelogic.io:443/properties/19255624"
+        },
+        {
+          "rel": "mainImage",
+          "href": "https://images.corelogic.asia/470x313/filters:stretch()/filters:watermark(cla-digital-assets-prod,watermarks/logo.png,-2p,-2p,30,16,16)/assets/perm/ng3u5snutqi6ve6v5ftwv5fhmm?signature=e3e204fbcf3aae88b7a0a0104b369256460be95912ab7340a362b974ae77685e"
+        },
+        {
+          "rel": "othWebUrl",
+          "href": "https://www.onthehouse.com.au/property/qld/paddington-4064/15-brindle-st-paddington-qld-4064-19255624"
+        }
+      ],
+      "id": "19255624"
+    },
+    {
+      "category": "Property",
+      "clPropertyId": "6701774",
+      "othPropertyId": "5051851",
+      "address": {
+        "formattedAddress": "42 HERBERT ST, PADDINGTON, QLD 4064",
+        "streetNumber": "42",
+        "streetName": "HERBERT",
+        "streetType": "ST",
+        "suburb": "PADDINGTON",
+        "stateCode": "QLD",
+        "postCode": "4064",
+        "location": {
+          "lat": -27.46265052,
+          "lon": 152.9973079
+        }
+      },
+      "beds": 2,
+      "baths": 1,
+      "carSpaces": 0,
+      "landSizeUnit": "squareMeter",
+      "type": "House",
+      "legalAttributes": {},
+      "guesstimate": {
+        "price": 1560000,
+        "calculationDate": "2026-05-04",
+        "errorRate": 0.11,
+        "fromPrice": 1500000,
+        "toPrice": 1600000,
+        "confidence": "Medium"
+      },
+      "lastSale": {
+        "eventDate": "2026-03-26",
+        "saleSource": "OTH",
+        "sellingAgency": {
+          "agencyId": "13862",
+          "name": "Ray White Paddington (Qld)",
+          "logo": "https://img.othsolutions.com.au/agent-centre/franchise/ray_white/logo.png",
+          "accountStatus": "ACTIVE",
+          "allowManualListings": false,
+          "agents": [
+            {
+              "uuid": "100034",
+              "firstName": "Brooke",
+              "lastName": "Rowley",
+              "preferences": {
+                "INCLUDE_IN_SEARCH": "true"
+              },
+              "hasInvitationDate": false,
+              "hasActivatedInvitation": false,
+              "hasCurrentValidInvitation": false,
+              "name": "Brooke Rowley",
+              "links": [],
+              "agencyId": "13862"
+            }
+          ],
+          "links": []
+        },
+        "lastListingId": "18344245",
+        "type": "SoldEvent"
+      },
+      "lastRental": {
+        "eventDate": "2026-04-28",
+        "rentedPrice": 695,
+        "type": "RentedEvent"
+      },
+      "recentlySold": true,
+      "isRestrictedSource": false,
+      "isSoldListing": true,
+      "hasVirtualTour": false,
+      "links": [
+        {
+          "rel": "self",
+          "href": "https://api-gateway-alb.cnsr-onthehouse-prod.aws.corelogic.io:443/properties/5051851"
+        },
+        {
+          "rel": "mainImage",
+          "href": "https://images.corelogic.asia/470x313/filters:stretch()/filters:watermark(cla-digital-assets-prod,watermarks/logo.png,-2p,-2p,30,16,16)/assets/perm/y7iel5aswii7dexu2vu5q35ade?signature=0dd69935d30c90c4d434128a68b7204e9aa143bb991de878bb95c36b116f1597"
+        },
+        {
+          "rel": "othWebUrl",
+          "href": "https://www.onthehouse.com.au/property/qld/paddington-4064/42-herbert-st-paddington-qld-4064-5051851"
+        }
+      ],
+      "id": "5051851"
+    },
+    {
+      "category": "Property",
+      "clPropertyId": "6703756",
+      "othPropertyId": "3182407",
+      "address": {
+        "formattedAddress": "19 PITT ST, PADDINGTON, QLD 4064",
+        "streetNumber": "19",
+        "streetName": "PITT",
+        "streetType": "ST",
+        "suburb": "PADDINGTON",
+        "stateCode": "QLD",
+        "postCode": "4064",
+        "location": {
+          "lat": -27.45657501,
+          "lon": 153.00230184
+        }
+      },
+      "beds": 4,
+      "baths": 2,
+      "carSpaces": 1,
+      "landSizeUnit": "squareMeter",
+      "yearBuilt": 1940,
+      "type": "House",
+      "legalAttributes": {},
+      "guesstimate": {
+        "price": 2150000,
+        "calculationDate": "2026-05-04",
+        "errorRate": 0.08,
+        "fromPrice": 2000000,
+        "toPrice": 2200000,
+        "confidence": "High"
+      },
+      "lastSale": {
+        "eventDate": "2026-03-20",
+        "salePrice": 2220000,
+        "saleSource": "VG",
+        "sellingAgency": {
+          "agencyId": "10755",
+          "name": "Place West",
+          "logo": "https://img.othsolutions.com.au/agent-centre/agency/10755/logo.png",
+          "accountStatus": "ACTIVE",
+          "allowManualListings": false,
+          "agents": [],
+          "links": []
+        },
+        "type": "SoldEvent"
+      },
+      "recentlySold": true,
+      "isRestrictedSource": false,
+      "isSoldListing": false,
+      "hasVirtualTour": false,
+      "links": [
+        {
+          "rel": "self",
+          "href": "https://api-gateway-alb.cnsr-onthehouse-prod.aws.corelogic.io:443/properties/3182407"
+        },
+        {
+          "rel": "mainImage",
+          "href": "https://images.corelogic.asia/470x313/filters:stretch()/filters:watermark(cla-digital-assets-prod,watermarks/logo.png,-2p,-2p,30,16,16)/assets/perm/yrjgy5bdyui67kqm275kp75ife?signature=3ae588ccfd6b11ac94838a917c176d9650ef68166d12e7dbbe937e46043cb465"
+        },
+        {
+          "rel": "othWebUrl",
+          "href": "https://www.onthehouse.com.au/property/qld/paddington-4064/19-pitt-st-paddington-qld-4064-3182407"
+        }
+      ],
+      "id": "3182407"
+    },
+    {
+      "category": "Property",
+      "clPropertyId": "6703023",
+      "othPropertyId": "3178868",
+      "address": {
+        "formattedAddress": "37 MACARTNEY ST, PADDINGTON, QLD 4064",
+        "streetNumber": "37",
+        "streetName": "MACARTNEY",
+        "streetType": "ST",
+        "suburb": "PADDINGTON",
+        "stateCode": "QLD",
+        "postCode": "4064",
+        "location": {
+          "lat": -27.46118454,
+          "lon": 152.99638557
+        }
+      },
+      "beds": 4,
+      "baths": 3,
+      "carSpaces": 1,
+      "floorSize": 223,
+      "landSize": 405,
+      "landSizeUnit": "squareMeter",
+      "type": "House",
+      "legalAttributes": {},
+      "guesstimate": {
+        "price": 2825000,
+        "calculationDate": "2026-05-04",
+        "errorRate": 0.11,
+        "fromPrice": 2800000,
+        "toPrice": 3000000,
+        "confidence": "Medium"
+      },
+      "lastSale": {
+        "eventDate": "2026-03-19",
+        "salePrice": 2850000,
+        "saleSource": "OTH",
+        "sellingAgency": {
+          "agencyId": "13862",
+          "name": "Ray White Paddington (Qld)",
+          "logo": "https://img.othsolutions.com.au/agent-centre/franchise/ray_white/logo.png",
+          "accountStatus": "ACTIVE",
+          "allowManualListings": false,
+          "agents": [
+            {
+              "uuid": "9926",
+              "firstName": "Max",
+              "lastName": "Hadgelias",
+              "preferences": {
+                "INCLUDE_IN_SEARCH": "true"
+              },
+              "hasInvitationDate": false,
+              "hasActivatedInvitation": false,
+              "hasCurrentValidInvitation": false,
+              "name": "Max Hadgelias",
+              "links": [],
+              "headShot": "https://img.othsolutions.com.au/agent-centre/agent/9926/headshot.jpg?20260507053048",
+              "agencyId": "13862"
+            }
+          ],
+          "links": []
+        },
+        "lastListingId": "18239885",
+        "type": "SoldEvent"
+      },
+      "lastRental": {
+        "eventDate": "2022-11-08",
+        "rentedPrice": 1520,
+        "type": "RentedEvent"
+      },
+      "recentlySold": true,
+      "isRestrictedSource": false,
+      "isSoldListing": true,
+      "hasVirtualTour": false,
+      "links": [
+        {
+          "rel": "self",
+          "href": "https://api-gateway-alb.cnsr-onthehouse-prod.aws.corelogic.io:443/properties/3178868"
+        },
+        {
+          "rel": "mainImage",
+          "href": "https://images.corelogic.asia/470x313/filters:stretch()/filters:watermark(cla-digital-assets-prod,watermarks/logo.png,-2p,-2p,30,16,16)/assets/perm/zvyw42xwrui7bk7lu6z5g32rfe?signature=0a378c9f5e6580a779e94fb108d73a9b6a1809ccf7f7996e7634ac6c1f24b8ba"
+        },
+        {
+          "rel": "othWebUrl",
+          "href": "https://www.onthehouse.com.au/property/qld/paddington-4064/37-macartney-st-paddington-qld-4064-3178868"
+        }
+      ],
+      "id": "3178868"
+    },
+    {
+      "category": "Property",
+      "clPropertyId": "6705406",
+      "othPropertyId": "3173007",
+      "address": {
+        "formattedAddress": "47 TERRACE ST, PADDINGTON, QLD 4064",
+        "streetNumber": "47",
+        "streetName": "TERRACE",
+        "streetType": "ST",
+        "suburb": "PADDINGTON",
+        "stateCode": "QLD",
+        "postCode": "4064",
+        "location": {
+          "lat": -27.45651512,
+          "lon": 153.00013452
+        }
+      },
+      "beds": 3,
+      "baths": 2,
+      "carSpaces": 1,
+      "landSizeUnit": "squareMeter",
+      "yearBuilt": 1920,
+      "type": "House",
+      "legalAttributes": {},
+      "guesstimate": {
+        "price": 2225000,
+        "calculationDate": "2026-05-04",
+        "errorRate": 0.1,
+        "fromPrice": 2200000,
+        "toPrice": 2400000,
+        "confidence": "Medium-High"
+      },
+      "lastSale": {
+        "eventDate": "2026-03-16",
+        "salePrice": 2450000,
+        "saleSource": "RP",
+        "sellingAgency": {
+          "agencyId": "10755",
+          "name": "Place West",
+          "logo": "https://img.othsolutions.com.au/agent-centre/agency/10755/logo.png",
+          "accountStatus": "ACTIVE",
+          "allowManualListings": false,
+          "agents": [],
+          "links": []
+        },
+        "type": "SoldEvent"
+      },
+      "lastRental": {
+        "eventDate": "2017-04-28",
+        "rentedPrice": 675,
+        "type": "RentedEvent"
+      },
+      "recentlySold": true,
+      "isRestrictedSource": false,
+      "isSoldListing": false,
+      "hasVirtualTour": false,
+      "links": [
+        {
+          "rel": "self",
+          "href": "https://api-gateway-alb.cnsr-onthehouse-prod.aws.corelogic.io:443/properties/3173007"
+        },
+        {
+          "rel": "mainImage",
+          "href": "https://images.corelogic.asia/470x313/filters:stretch()/filters:watermark(cla-digital-assets-prod,watermarks/logo.png,-2p,-2p,30,16,16)/assets/perm/ijquh6zcbii6xnan6fom5fx7t4?signature=fe07b9f726765dc2c307ef5d64e2ac16d2639a3f7e0393070ff08f11487de29b"
+        },
+        {
+          "rel": "othWebUrl",
+          "href": "https://www.onthehouse.com.au/property/qld/paddington-4064/47-terrace-st-paddington-qld-4064-3173007"
+        }
+      ],
+      "id": "3173007"
+    },
+    {
+      "category": "Property",
+      "clPropertyId": "57920855",
+      "othPropertyId": "14474688",
+      "address": {
+        "formattedAddress": "18 DRYNAN ST, PADDINGTON, QLD 4064",
+        "streetNumber": "18",
+        "streetName": "DRYNAN",
+        "streetType": "ST",
+        "suburb": "PADDINGTON",
+        "stateCode": "QLD",
+        "postCode": "4064",
+        "location": {
+          "lat": -27.45784426,
+          "lon": 152.99542009
+        }
+      },
+      "beds": 5,
+      "baths": 4,
+      "carSpaces": 4,
+      "landSizeUnit": "squareMeter",
+      "yearBuilt": 1930,
+      "type": "House",
+      "legalAttributes": {},
+      "guesstimate": {
+        "price": 3500000,
+        "calculationDate": "2026-05-04",
+        "errorRate": 0.11,
+        "fromPrice": 3500000,
+        "toPrice": 3750000,
+        "confidence": "Medium"
+      },
+      "lastSale": {
+        "eventDate": "2026-03-16",
+        "salePrice": 3425000,
+        "saleSource": "VG",
+        "sellingAgency": {
+          "allowManualListings": false,
+          "agents": [],
+          "links": []
+        },
+        "type": "SoldEvent"
+      },
+      "recentlySold": true,
+      "isRestrictedSource": true,
+      "isSoldListing": false,
+      "hasVirtualTour": false,
+      "links": [
+        {
+          "rel": "self",
+          "href": "https://api-gateway-alb.cnsr-onthehouse-prod.aws.corelogic.io:443/properties/14474688"
+        },
+        {
+          "rel": "mainImage",
+          "href": "https://images.corelogic.asia/470x313/filters:stretch()/filters:watermark(cla-digital-assets-prod,watermarks/logo.png,-2p,-2p,30,16,16)/assets/perm/o7kg2slfxei67oczj7wfoaqfui?signature=54cb8b05dce57813f3784509b4740897953aa7ef0eedb24e9b308c14e49573ca"
+        },
+        {
+          "rel": "othWebUrl",
+          "href": "https://www.onthehouse.com.au/property/qld/paddington-4064/18-drynan-st-paddington-qld-4064-14474688"
+        }
+      ],
+      "id": "14474688"
+    },
+    {
+      "category": "Property",
+      "clPropertyId": "6697866",
+      "othPropertyId": "3711842",
+      "address": {
+        "formattedAddress": "6/49 CHARLOTTE ST, PADDINGTON, QLD 4064",
+        "unitNumber": "6",
+        "streetNumber": "49",
+        "streetName": "CHARLOTTE",
+        "streetType": "ST",
+        "suburb": "PADDINGTON",
+        "stateCode": "QLD",
+        "postCode": "4064",
+        "location": {
+          "lat": -27.46011241,
+          "lon": 153.00785438
+        }
+      },
+      "beds": 3,
+      "baths": 2,
+      "carSpaces": 2,
+      "floorSize": 162,
+      "landSizeUnit": "squareMeter",
+      "yearBuilt": 1995,
+      "type": "Unit",
+      "legalAttributes": {},
+      "guesstimate": {
+        "price": 1300000,
+        "calculationDate": "2026-05-04",
+        "errorRate": 0.09,
+        "fromPrice": 1200000,
+        "toPrice": 1300000,
+        "confidence": "Medium-High"
+      },
+      "lastSale": {
+        "eventDate": "2026-03-14",
+        "salePrice": 1263000,
+        "saleSource": "OTH",
+        "sellingAgency": {
+          "agencyId": "21217",
+          "name": "Penrose Real Estate",
+          "logo": "https://img.othsolutions.com.au/agent-centre/agency/21217/logo.png",
+          "accountStatus": "ACTIVE",
+          "allowManualListings": false,
+          "agents": [
+            {
+              "uuid": "161297",
+              "firstName": "Christina",
+              "lastName": "Penrose",
+              "preferences": {
+                "INCLUDE_IN_SEARCH": "true"
+              },
+              "hasInvitationDate": false,
+              "hasActivatedInvitation": false,
+              "hasCurrentValidInvitation": false,
+              "name": "Christina Penrose",
+              "links": [],
+              "agencyId": "21217"
+            },
+            {
+              "uuid": "161298",
+              "firstName": "Grant",
+              "lastName": "Penrose",
+              "preferences": {
+                "INCLUDE_IN_SEARCH": "true"
+              },
+              "hasInvitationDate": false,
+              "hasActivatedInvitation": false,
+              "hasCurrentValidInvitation": false,
+              "name": "Grant Penrose",
+              "links": [],
+              "agencyId": "21217"
+            }
+          ],
+          "links": []
+        },
+        "lastListingId": "18347281",
+        "type": "SoldEvent"
+      },
+      "lastRental": {
+        "eventDate": "2021-02-05",
+        "rentedPrice": 630,
+        "type": "RentedEvent"
+      },
+      "recentlySold": true,
+      "isRestrictedSource": false,
+      "isSoldListing": true,
+      "hasVirtualTour": false,
+      "links": [
+        {
+          "rel": "self",
+          "href": "https://api-gateway-alb.cnsr-onthehouse-prod.aws.corelogic.io:443/properties/3711842"
+        },
+        {
+          "rel": "mainImage",
+          "href": "https://images.corelogic.asia/470x313/filters:stretch()/filters:watermark(cla-digital-assets-prod,watermarks/logo.png,-2p,-2p,30,16,16)/assets/perm/skdaaaceuui6xlvd4xpqd62sam?signature=a89d72148127cb01eb3c738ad6068b203493c96ffedb237e4762074137c180f7"
+        },
+        {
+          "rel": "othWebUrl",
+          "href": "https://www.onthehouse.com.au/property/qld/paddington-4064/6-49-charlotte-st-paddington-qld-4064-3711842"
+        }
+      ],
+      "id": "3711842"
+    },
+    {
+      "category": "Property",
+      "clPropertyId": "6699652",
+      "othPropertyId": "3711603",
+      "address": {
+        "formattedAddress": "3/106 FERNBERG RD, PADDINGTON, QLD 4064",
+        "unitNumber": "3",
+        "streetNumber": "106",
+        "streetName": "FERNBERG",
+        "streetType": "RD",
+        "suburb": "PADDINGTON",
+        "stateCode": "QLD",
+        "postCode": "4064",
+        "location": {
+          "lat": -27.46339008,
+          "lon": 152.99566814
+        }
+      },
+      "beds": 2,
+      "baths": 2,
+      "carSpaces": 1,
+      "landSizeUnit": "squareMeter",
+      "yearBuilt": 1998,
+      "type": "Unit",
+      "legalAttributes": {},
+      "guesstimate": {
+        "price": 1020000,
+        "calculationDate": "2026-05-04",
+        "errorRate": 0.08,
+        "fromPrice": 1000000,
+        "toPrice": 1100000,
+        "confidence": "High"
+      },
+      "lastSale": {
+        "eventDate": "2026-03-10",
+        "salePrice": 1000000,
+        "saleSource": "VG",
+        "sellingAgency": {
+          "allowManualListings": false,
+          "agents": [],
+          "links": []
+        },
+        "type": "SoldEvent"
+      },
+      "lastRental": {
+        "eventDate": "2024-08-01",
+        "rentedPrice": 0,
+        "type": "RentedEvent"
+      },
+      "recentlySold": true,
+      "isRestrictedSource": false,
+      "isSoldListing": false,
+      "hasVirtualTour": false,
+      "links": [
+        {
+          "rel": "self",
+          "href": "https://api-gateway-alb.cnsr-onthehouse-prod.aws.corelogic.io:443/properties/3711603"
+        },
+        {
+          "rel": "mainImage",
+          "href": "https://images.corelogic.asia/470x313/filters:stretch()/filters:watermark(cla-digital-assets-prod,watermarks/logo.png,-2p,-2p,30,16,16)/assets/perm/l3yj2ycpgyi67msrtx5gxxbu2m?signature=f7a034d694fdd14030a3485bc18fd137702dc023d1b586418ef7873fab7c80fa"
+        },
+        {
+          "rel": "othWebUrl",
+          "href": "https://www.onthehouse.com.au/property/qld/paddington-4064/3-106-fernberg-rd-paddington-qld-4064-3711603"
+        }
+      ],
+      "id": "3711603"
+    },
+    {
+      "category": "Property",
+      "clPropertyId": "6704393",
+      "othPropertyId": "3174403",
+      "address": {
+        "formattedAddress": "15 ROCKBOURNE TCE, PADDINGTON, QLD 4064",
+        "streetNumber": "15",
+        "streetName": "ROCKBOURNE",
+        "streetType": "TCE",
+        "suburb": "PADDINGTON",
+        "stateCode": "QLD",
+        "postCode": "4064",
+        "location": {
+          "lat": -27.45500283,
+          "lon": 152.99584316
+        }
+      },
+      "beds": 5,
+      "baths": 3,
+      "carSpaces": 0,
+      "floorSize": 0,
+      "landSize": 493,
+      "landSizeUnit": "squareMeter",
+      "type": "House",
+      "legalAttributes": {},
+      "guesstimate": {
+        "price": 2675000,
+        "calculationDate": "2026-05-04",
+        "errorRate": 0.11,
+        "fromPrice": 2600000,
+        "toPrice": 2800000,
+        "confidence": "Medium"
+      },
+      "lastSale": {
+        "eventDate": "2026-03-30",
+        "saleSource": "OTH",
+        "sellingAgency": {
+          "agencyId": "22983",
+          "name": "Caroline Brown Property",
+          "accountStatus": "ACTIVE",
+          "allowManualListings": false,
+          "agents": [
+            {
+              "uuid": "241052",
+              "firstName": "Caroline",
+              "lastName": "Brown",
+              "preferences": {
+                "INCLUDE_IN_SEARCH": "true"
+              },
+              "hasInvitationDate": false,
+              "hasActivatedInvitation": false,
+              "hasCurrentValidInvitation": false,
+              "name": "Caroline Brown",
+              "links": [],
+              "agencyId": "22983"
+            },
+            {
+              "uuid": "241053",
+              "firstName": "Trudy",
+              "lastName": "Pulvirenti",
+              "preferences": {
+                "INCLUDE_IN_SEARCH": "true"
+              },
+              "hasInvitationDate": false,
+              "hasActivatedInvitation": false,
+              "hasCurrentValidInvitation": false,
+              "name": "Trudy Pulvirenti",
+              "links": [],
+              "agencyId": "22983"
+            }
+          ],
+          "links": []
+        },
+        "lastListingId": "18352613",
+        "type": "SoldEvent"
+      },
+      "recentlySold": true,
+      "isRestrictedSource": false,
+      "isSoldListing": true,
+      "hasVirtualTour": false,
+      "links": [
+        {
+          "rel": "self",
+          "href": "https://api-gateway-alb.cnsr-onthehouse-prod.aws.corelogic.io:443/properties/3174403"
+        },
+        {
+          "rel": "mainImage",
+          "href": "https://images.corelogic.asia/470x313/filters:stretch()/filters:watermark(cla-digital-assets-prod,watermarks/logo.png,-2p,-2p,30,16,16)/assets/perm/kdl6svqv4qi7dcx7knywybh5uy?signature=ff5d85b73075de4aeecbd2d117d2046462fe11c4aaab203a4183127cc0d3f9f4"
+        },
+        {
+          "rel": "othWebUrl",
+          "href": "https://www.onthehouse.com.au/property/qld/paddington-4064/15-rockbourne-tce-paddington-qld-4064-3174403"
+        }
+      ],
+      "id": "3174403"
+    },
+    {
+      "category": "Property",
+      "clPropertyId": "6705733",
+      "othPropertyId": "3183018",
+      "address": {
+        "formattedAddress": "49 WARMINGTON ST, PADDINGTON, QLD 4064",
+        "streetNumber": "49",
+        "streetName": "WARMINGTON",
+        "streetType": "ST",
+        "suburb": "PADDINGTON",
+        "stateCode": "QLD",
+        "postCode": "4064",
+        "location": {
+          "lat": -27.456655,
+          "lon": 152.99908213
+        }
+      },
+      "beds": 5,
+      "baths": 2,
+      "carSpaces": 2,
+      "landSize": 405,
+      "landSizeUnit": "squareMeter",
+      "type": "House",
+      "legalAttributes": {},
+      "guesstimate": {
+        "price": 2800000,
+        "calculationDate": "2026-05-04",
+        "errorRate": 0.09,
+        "fromPrice": 2800000,
+        "toPrice": 3000000,
+        "confidence": "Medium-High"
+      },
+      "lastSale": {
+        "eventDate": "2026-03-04",
+        "saleSource": "OTH",
+        "sellingAgency": {
+          "agencyId": "13862",
+          "name": "Ray White Paddington (Qld)",
+          "logo": "https://img.othsolutions.com.au/agent-centre/franchise/ray_white/logo.png",
+          "accountStatus": "ACTIVE",
+          "allowManualListings": false,
+          "agents": [
+            {
+              "uuid": "76022",
+              "firstName": "Michael",
+              "lastName": "Kleimeyer",
+              "preferences": {
+                "INCLUDE_IN_SEARCH": "true"
+              },
+              "hasInvitationDate": false,
+              "hasActivatedInvitation": false,
+              "hasCurrentValidInvitation": false,
+              "name": "Michael Kleimeyer",
+              "links": [],
+              "agencyId": "13862"
+            },
+            {
+              "uuid": "36057",
+              "firstName": "Judi",
+              "lastName": "O'Dea",
+              "preferences": {
+                "INCLUDE_IN_SEARCH": "true"
+              },
+              "hasInvitationDate": false,
+              "hasActivatedInvitation": false,
+              "hasCurrentValidInvitation": false,
+              "name": "Judi O'Dea",
+              "links": [],
+              "agencyId": "13862"
+            }
+          ],
+          "links": []
+        },
+        "lastListingId": "18248044",
+        "type": "SoldEvent"
+      },
+      "lastRental": {
+        "eventDate": "2024-08-15",
+        "rentedPrice": 1500,
+        "type": "RentedEvent"
+      },
+      "recentlySold": true,
+      "isRestrictedSource": false,
+      "isSoldListing": true,
+      "hasVirtualTour": false,
+      "links": [
+        {
+          "rel": "self",
+          "href": "https://api-gateway-alb.cnsr-onthehouse-prod.aws.corelogic.io:443/properties/3183018"
+        },
+        {
+          "rel": "mainImage",
+          "href": "https://images.corelogic.asia/470x313/filters:stretch()/filters:watermark(cla-digital-assets-prod,watermarks/logo.png,-2p,-2p,30,16,16)/assets/perm/hq7oh3hxh4i7bi3zmx3xpcubmy?signature=8305447c26909500168480d30e49485989169e1db0a9d24d535933a6c10efed3"
+        },
+        {
+          "rel": "othWebUrl",
+          "href": "https://www.onthehouse.com.au/property/qld/paddington-4064/49-warmington-st-paddington-qld-4064-3183018"
+        }
+      ],
+      "id": "3183018"
+    },
+    {
+      "category": "Property",
+      "clPropertyId": "6695473",
+      "othPropertyId": "5051843",
+      "address": {
+        "formattedAddress": "47 ALMA ST, PADDINGTON, QLD 4064",
+        "streetNumber": "47",
+        "streetName": "ALMA",
+        "streetType": "ST",
+        "suburb": "PADDINGTON",
+        "stateCode": "QLD",
+        "postCode": "4064",
+        "location": {
+          "lat": -27.46091954,
+          "lon": 152.99909385
+        }
+      },
+      "beds": 3,
+      "baths": 2,
+      "carSpaces": 1,
+      "landSize": 499,
+      "landSizeUnit": "squareMeter",
+      "type": "House",
+      "legalAttributes": {},
+      "guesstimate": {
+        "price": 2150000,
+        "calculationDate": "2026-05-04",
+        "errorRate": 0.11,
+        "fromPrice": 2000000,
+        "toPrice": 2200000,
+        "confidence": "Medium"
+      },
+      "lastSale": {
+        "eventDate": "2026-03-02",
+        "saleSource": "OTH",
+        "sellingAgency": {
+          "agencyId": "13862",
+          "name": "Ray White Paddington (Qld)",
+          "logo": "https://img.othsolutions.com.au/agent-centre/franchise/ray_white/logo.png",
+          "accountStatus": "ACTIVE",
+          "allowManualListings": false,
+          "agents": [
+            {
+              "uuid": "9926",
+              "firstName": "Max",
+              "lastName": "Hadgelias",
+              "preferences": {
+                "INCLUDE_IN_SEARCH": "true"
+              },
+              "hasInvitationDate": false,
+              "hasActivatedInvitation": false,
+              "hasCurrentValidInvitation": false,
+              "name": "Max Hadgelias",
+              "links": [],
+              "headShot": "https://img.othsolutions.com.au/agent-centre/agent/9926/headshot.jpg?20260507053048",
+              "agencyId": "13862"
+            }
+          ],
+          "links": []
+        },
+        "lastListingId": "18280619",
+        "type": "SoldEvent"
+      },
+      "recentlySold": true,
+      "isRestrictedSource": false,
+      "isSoldListing": true,
+      "hasVirtualTour": false,
+      "links": [
+        {
+          "rel": "self",
+          "href": "https://api-gateway-alb.cnsr-onthehouse-prod.aws.corelogic.io:443/properties/5051843"
+        },
+        {
+          "rel": "mainImage",
+          "href": "https://images.corelogic.asia/470x313/filters:stretch()/filters:watermark(cla-digital-assets-prod,watermarks/logo.png,-2p,-2p,30,16,16)/assets/perm/a5b2yrqbnmi7dfyffh3v33ysou?signature=fa6992383f4d776973ddbe6239425e205068257dd9100e1f7f85ca00c0d870aa"
+        },
+        {
+          "rel": "othWebUrl",
+          "href": "https://www.onthehouse.com.au/property/qld/paddington-4064/47-alma-st-paddington-qld-4064-5051843"
+        }
+      ],
+      "id": "5051843"
+    },
+    {
+      "category": "Property",
+      "clPropertyId": "6695751",
+      "othPropertyId": "40164996",
+      "address": {
+        "formattedAddress": "81 BAROONA RD, PADDINGTON, QLD 4064",
+        "streetNumber": "81",
+        "streetName": "BAROONA",
+        "streetType": "RD",
+        "suburb": "PADDINGTON",
+        "stateCode": "QLD",
+        "postCode": "4064",
+        "location": {
+          "lat": -27.46646927,
+          "lon": 153.00093837
+        }
+      },
+      "carSpaces": 1,
+      "landSizeUnit": "squareMeter",
+      "type": "Commercial",
+      "legalAttributes": {},
+      "lastSale": {
+        "eventDate": "2026-02-25",
+        "salePrice": 2350000,
+        "saleSource": "VG",
+        "sellingAgency": {
+          "allowManualListings": false,
+          "agents": [],
+          "links": []
+        },
+        "type": "SoldEvent"
+      },
+      "recentlySold": true,
+      "isRestrictedSource": true,
+      "isSoldListing": false,
+      "hasVirtualTour": false,
+      "links": [
+        {
+          "rel": "self",
+          "href": "https://api-gateway-alb.cnsr-onthehouse-prod.aws.corelogic.io:443/properties/40164996"
+        },
+        {
+          "rel": "mainImage",
+          "href": "https://images.corelogic.asia/470x313/filters:stretch()/filters:watermark(cla-digital-assets-prod,watermarks/logo.png,-2p,-2p,30,16,16)/assets/perm/5yotncv5dii6nehuw7krfxcgha?signature=9fef8d6c1e7f778f77d5d588f8ecc4e7dbea2995389fe4e1a66c9333bdf3d973"
+        },
+        {
+          "rel": "othWebUrl",
+          "href": "https://www.onthehouse.com.au/property/qld/paddington-4064/81-baroona-rd-paddington-qld-4064-40164996"
+        }
+      ],
+      "id": "40164996"
+    },
+    {
+      "category": "Property",
+      "clPropertyId": "6695791",
+      "othPropertyId": "3183641",
+      "address": {
+        "formattedAddress": "113 BAROONA RD, PADDINGTON, QLD 4064",
+        "streetNumber": "113",
+        "streetName": "BAROONA",
+        "streetType": "RD",
+        "suburb": "PADDINGTON",
+        "stateCode": "QLD",
+        "postCode": "4064",
+        "location": {
+          "lat": -27.46571024,
+          "lon": 152.99931838
+        }
+      },
+      "beds": 3,
+      "baths": 1,
+      "carSpaces": 1,
+      "landSizeUnit": "squareMeter",
+      "yearBuilt": 1920,
+      "type": "House",
+      "legalAttributes": {},
+      "guesstimate": {
+        "price": 1750000,
+        "calculationDate": "2026-05-04",
+        "errorRate": 0.12,
+        "fromPrice": 1600000,
+        "toPrice": 1800000,
+        "confidence": "Medium"
+      },
+      "lastSale": {
+        "eventDate": "2026-02-23",
+        "salePrice": 1600000,
+        "saleSource": "VG",
+        "sellingAgency": {
+          "allowManualListings": false,
+          "agents": [],
+          "links": []
+        },
+        "type": "SoldEvent"
+      },
+      "recentlySold": true,
+      "isRestrictedSource": true,
+      "isSoldListing": false,
+      "hasVirtualTour": false,
+      "links": [
+        {
+          "rel": "self",
+          "href": "https://api-gateway-alb.cnsr-onthehouse-prod.aws.corelogic.io:443/properties/3183641"
+        },
+        {
+          "rel": "mainImage",
+          "href": "https://images.corelogic.asia/470x313/filters:stretch()/filters:watermark(cla-digital-assets-prod,watermarks/logo.png,-2p,-2p,30,16,16)/assets/perm/2dqz7g5wx4i65dylzm3yfyoxsu?signature=4ae65ca52b77f5a39aff1a6ac6133c0082975d56a301d99f3703530a9df5e3e1"
+        },
+        {
+          "rel": "othWebUrl",
+          "href": "https://www.onthehouse.com.au/property/qld/paddington-4064/113-baroona-rd-paddington-qld-4064-3183641"
+        }
+      ],
+      "id": "3183641"
+    },
+    {
+      "category": "Property",
+      "clPropertyId": "6697111",
+      "othPropertyId": "11575206",
+      "address": {
+        "formattedAddress": "4/13 COCHRANE ST, PADDINGTON, QLD 4064",
+        "unitNumber": "4",
+        "streetNumber": "13",
+        "streetName": "COCHRANE",
+        "streetType": "ST",
+        "suburb": "PADDINGTON",
+        "stateCode": "QLD",
+        "postCode": "4064",
+        "location": {
+          "lat": -27.45915927,
+          "lon": 153.0027735
+        }
+      },
+      "beds": 2,
+      "baths": 1,
+      "carSpaces": 1,
+      "landSizeUnit": "squareMeter",
+      "yearBuilt": 1985,
+      "type": "Unit",
+      "legalAttributes": {},
+      "guesstimate": {
+        "price": 1070000,
+        "calculationDate": "2026-05-04",
+        "errorRate": 0.09,
+        "fromPrice": 1000000,
+        "toPrice": 1100000,
+        "confidence": "Medium-High"
+      },
+      "lastSale": {
+        "eventDate": "2026-02-21",
+        "salePrice": 1140000,
+        "saleSource": "VG",
+        "sellingAgency": {
+          "allowManualListings": false,
+          "agents": [],
+          "links": []
+        },
+        "type": "SoldEvent"
+      },
+      "recentlySold": true,
+      "isRestrictedSource": true,
+      "isSoldListing": false,
+      "hasVirtualTour": false,
+      "links": [
+        {
+          "rel": "self",
+          "href": "https://api-gateway-alb.cnsr-onthehouse-prod.aws.corelogic.io:443/properties/11575206"
+        },
+        {
+          "rel": "mainImage",
+          "href": "https://images.corelogic.asia/470x313/filters:stretch()/filters:watermark(cla-digital-assets-prod,watermarks/logo.png,-2p,-2p,30,16,16)/assets/perm/nwocz3v6gmi6npkhlvberwnjuu?signature=3692941d43253d8b74c2227d2027b940a25960b4fb4624c2e52e00fa2093a642"
+        },
+        {
+          "rel": "othWebUrl",
+          "href": "https://www.onthehouse.com.au/property/qld/paddington-4064/4-13-cochrane-st-paddington-qld-4064-11575206"
+        }
+      ],
+      "id": "11575206"
+    },
+    {
+      "category": "Property",
+      "clPropertyId": "6699999",
+      "othPropertyId": "19440881",
+      "address": {
+        "formattedAddress": "8 GARFIELD DR, PADDINGTON, QLD 4064",
+        "streetNumber": "8",
+        "streetName": "GARFIELD",
+        "streetType": "DR",
+        "suburb": "PADDINGTON",
+        "stateCode": "QLD",
+        "postCode": "4064",
+        "location": {
+          "lat": -27.45888075,
+          "lon": 152.98882607
+        }
+      },
+      "beds": 4,
+      "baths": 3,
+      "carSpaces": 2,
+      "landSizeUnit": "squareMeter",
+      "yearBuilt": 1930,
+      "type": "House",
+      "legalAttributes": {},
+      "guesstimate": {
+        "price": 4575000,
+        "calculationDate": "2026-05-04",
+        "errorRate": 0.13,
+        "fromPrice": 4500000,
+        "toPrice": 5000000,
+        "confidence": "Medium"
+      },
+      "lastSale": {
+        "eventDate": "2026-02-20",
+        "salePrice": 0,
+        "saleSource": "RP",
+        "sellingAgency": {
+          "name": "Place Kangaroo Point",
+          "allowManualListings": false,
+          "agents": [],
+          "links": []
+        },
+        "type": "SoldEvent"
+      },
+      "recentlySold": true,
+      "isRestrictedSource": false,
+      "isSoldListing": false,
+      "hasVirtualTour": false,
+      "links": [
+        {
+          "rel": "self",
+          "href": "https://api-gateway-alb.cnsr-onthehouse-prod.aws.corelogic.io:443/properties/19440881"
+        },
+        {
+          "rel": "mainImage",
+          "href": "https://images.corelogic.asia/470x313/filters:stretch()/filters:watermark(cla-digital-assets-prod,watermarks/logo.png,-2p,-2p,30,16,16)/assets/perm/ebyo2xidomi7dbuht4j6u5qngi?signature=d4e8b034d51a4fb2d33a74bdf20a9c4646f6208d9db677d9c3a770b7262b0a1e"
+        },
+        {
+          "rel": "othWebUrl",
+          "href": "https://www.onthehouse.com.au/property/qld/paddington-4064/8-garfield-dr-paddington-qld-4064-19440881"
+        }
+      ],
+      "id": "19440881"
+    }
+  ],
+  "pageable": {
+    "sort": {
+      "sorted": false,
+      "unsorted": true,
+      "empty": true
+    },
+    "offset": 0,
+    "pageSize": 24,
+    "pageNumber": 0,
+    "paged": true,
+    "unpaged": false
+  },
+  "totalElements": 202,
+  "totalPages": 9,
+  "last": false,
+  "size": 24,
+  "number": 0,
+  "sort": {
+    "sorted": false,
+    "unsorted": true,
+    "empty": true
+  },
+  "first": true,
+  "numberOfElements": 24,
+  "empty": false
+}

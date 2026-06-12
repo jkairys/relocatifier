@@ -12,6 +12,8 @@ import { MapView } from "./MapView";
 import { firstAvailableMetric, METRIC_ORDER } from "./metrics";
 import type { MapApi, PickedSuburb } from "./types";
 import { useArtifacts } from "./useArtifacts";
+import { useSales } from "./useSales";
+import { useScraper } from "./useScraper";
 import { useShortlist } from "./useShortlist";
 
 export default function App() {
@@ -23,6 +25,8 @@ export default function App() {
   const [layerVisibility, setLayerVisibility] = useState(defaultLayerVisibility);
   const [compareOpen, setCompareOpen] = useState(false);
   const shortlist = useShortlist();
+  const { sales, reload: reloadSales } = useSales();
+  const scraper = useScraper(reloadSales);
   const mapApiRef = useRef<MapApi | null>(null);
 
   // Once the artifact arrives, default to the first metric that has data.
@@ -106,6 +110,8 @@ export default function App() {
               picked={picked}
               selectedMetricId={selectedMetricId}
               pinned={shortlist.has(picked.salCode)}
+              sales={sales?.suburbs[picked.salCode] ?? null}
+              scraper={scraper}
               onTogglePin={() => shortlist.toggle(picked.salCode)}
               onClose={() => setPicked(null)}
             />

@@ -1,0 +1,1656 @@
+{
+  "content": [
+    {
+      "category": "Property",
+      "clPropertyId": "3093516",
+      "othPropertyId": "2634563",
+      "address": {
+        "formattedAddress": "7 KENNEDY RD, BLI BLI, QLD 4560",
+        "streetNumber": "7",
+        "streetName": "KENNEDY",
+        "streetType": "RD",
+        "suburb": "BLI BLI",
+        "stateCode": "QLD",
+        "postCode": "4560",
+        "location": {
+          "lat": -26.61976787,
+          "lon": 153.0375032
+        }
+      },
+      "beds": 5,
+      "baths": 2,
+      "carSpaces": 3,
+      "floorSize": 0,
+      "landSizeUnit": "squareMeter",
+      "type": "House",
+      "legalAttributes": {},
+      "guesstimate": {
+        "price": 1350000,
+        "calculationDate": "2026-06-08",
+        "errorRate": 0.07,
+        "fromPrice": 1300000,
+        "toPrice": 1400000,
+        "confidence": "High"
+      },
+      "lastSale": {
+        "eventDate": "2026-04-13",
+        "salePrice": 1335000,
+        "saleSource": "OTH",
+        "sellingAgency": {
+          "agencyId": "3541",
+          "name": "CENTURY 21 On Duporth",
+          "logo": "https://img.othsolutions.com.au/agent-centre/agency/3541/logo.png",
+          "accountStatus": "ACTIVE",
+          "allowManualListings": false,
+          "agents": [
+            {
+              "uuid": "159909",
+              "firstName": "Sarah",
+              "lastName": "Roberts",
+              "preferences": {
+                "INCLUDE_IN_SEARCH": "true"
+              },
+              "hasInvitationDate": false,
+              "hasActivatedInvitation": false,
+              "hasCurrentValidInvitation": false,
+              "name": "Sarah Roberts",
+              "links": [],
+              "headShot": "https://img.othsolutions.com.au/agent-centre/agent/159909/headshot/485dca74-4e57-42f6-a07b-eccbbcc8f3f4.png?20230629235133",
+              "agencyId": "3541"
+            }
+          ],
+          "links": []
+        },
+        "lastListingId": "18419642",
+        "type": "SoldEvent"
+      },
+      "recentlySold": true,
+      "isRestrictedSource": false,
+      "isSoldListing": true,
+      "hasVirtualTour": false,
+      "links": [
+        {
+          "rel": "self",
+          "href": "https://api-gateway-alb.cnsr-onthehouse-prod.aws.corelogic.io:443/properties/2634563"
+        },
+        {
+          "rel": "mainImage",
+          "href": "https://images.corelogic.asia/470x313/filters:stretch()/filters:watermark(cla-digital-assets-prod,watermarks/logo.png,-2p,-2p,30,16,16)/assets/perm/cx6zsph7w4i6tnc63ov3nzyj5q?signature=44f3adbf757972f3e4e696ac8d9aa322cef5f08ffdd3158f652eb676ae7917bb"
+        },
+        {
+          "rel": "othWebUrl",
+          "href": "https://www.onthehouse.com.au/property/qld/bli-bli-4560/7-kennedy-rd-bli-bli-qld-4560-2634563"
+        }
+      ],
+      "id": "2634563"
+    },
+    {
+      "category": "Property",
+      "clPropertyId": "3096408",
+      "othPropertyId": "2635919",
+      "address": {
+        "formattedAddress": "25 WHITECROSS RD, BLI BLI, QLD 4560",
+        "streetNumber": "25",
+        "streetName": "WHITECROSS",
+        "streetType": "RD",
+        "suburb": "BLI BLI",
+        "stateCode": "QLD",
+        "postCode": "4560",
+        "location": {
+          "lat": -26.61148905,
+          "lon": 153.02566442
+        }
+      },
+      "beds": 2,
+      "baths": 2,
+      "carSpaces": 2,
+      "landSizeUnit": "squareMeter",
+      "yearBuilt": 1990,
+      "type": "House",
+      "legalAttributes": {},
+      "guesstimate": {
+        "price": 1230000,
+        "calculationDate": "2026-06-08",
+        "errorRate": 0.11,
+        "fromPrice": 1200000,
+        "toPrice": 1300000,
+        "confidence": "Medium"
+      },
+      "lastSale": {
+        "eventDate": "2026-04-07",
+        "salePrice": 1025000,
+        "saleSource": "VG",
+        "sellingAgency": {
+          "agencyId": "11503",
+          "name": "HARCOURTS HINTERLAND",
+          "logo": "https://img.othsolutions.com.au/agent-centre/agency/11503/logo.png",
+          "accountStatus": "ACTIVE",
+          "allowManualListings": false,
+          "agents": [],
+          "links": []
+        },
+        "type": "SoldEvent"
+      },
+      "lastRental": {
+        "eventDate": "2024-12-04",
+        "rentedPrice": 0,
+        "type": "RentedEvent"
+      },
+      "recentlySold": true,
+      "isRestrictedSource": false,
+      "isSoldListing": false,
+      "hasVirtualTour": false,
+      "links": [
+        {
+          "rel": "self",
+          "href": "https://api-gateway-alb.cnsr-onthehouse-prod.aws.corelogic.io:443/properties/2635919"
+        },
+        {
+          "rel": "mainImage",
+          "href": "https://images.corelogic.asia/470x313/filters:stretch()/filters:watermark(cla-digital-assets-prod,watermarks/logo.png,-2p,-2p,30,16,16)/assets/perm/t6r74fvwiqi65cpmy7kz7sbcdq?signature=cc8a61d30de8376b7dd397f958e27c8a0975128af63aaec99924198b9f8b3974"
+        },
+        {
+          "rel": "othWebUrl",
+          "href": "https://www.onthehouse.com.au/property/qld/bli-bli-4560/25-whitecross-rd-bli-bli-qld-4560-2635919"
+        }
+      ],
+      "id": "2635919"
+    },
+    {
+      "category": "Property",
+      "clPropertyId": "3091193",
+      "othPropertyId": "4103400",
+      "address": {
+        "formattedAddress": "5 CASEY ST, BLI BLI, QLD 4560",
+        "streetNumber": "5",
+        "streetName": "CASEY",
+        "streetType": "ST",
+        "suburb": "BLI BLI",
+        "stateCode": "QLD",
+        "postCode": "4560",
+        "location": {
+          "lat": -26.62282841,
+          "lon": 153.03483674
+        }
+      },
+      "beds": 3,
+      "baths": 1,
+      "carSpaces": 1,
+      "floorSize": 0,
+      "landSize": 700,
+      "landSizeUnit": "squareMeter",
+      "type": "House",
+      "legalAttributes": {},
+      "guesstimate": {
+        "price": 1030000,
+        "calculationDate": "2026-06-08",
+        "errorRate": 0.07,
+        "fromPrice": 1000000,
+        "toPrice": 1100000,
+        "confidence": "High"
+      },
+      "lastSale": {
+        "eventDate": "2026-04-07",
+        "salePrice": 1023000,
+        "saleSource": "OTH",
+        "sellingAgency": {
+          "agencyId": "3541",
+          "name": "CENTURY 21 On Duporth",
+          "logo": "https://img.othsolutions.com.au/agent-centre/agency/3541/logo.png",
+          "accountStatus": "ACTIVE",
+          "allowManualListings": false,
+          "agents": [
+            {
+              "uuid": "159909",
+              "firstName": "Sarah",
+              "lastName": "Roberts",
+              "preferences": {
+                "INCLUDE_IN_SEARCH": "true"
+              },
+              "hasInvitationDate": false,
+              "hasActivatedInvitation": false,
+              "hasCurrentValidInvitation": false,
+              "name": "Sarah Roberts",
+              "links": [],
+              "headShot": "https://img.othsolutions.com.au/agent-centre/agent/159909/headshot/485dca74-4e57-42f6-a07b-eccbbcc8f3f4.png?20230629235133",
+              "agencyId": "3541"
+            }
+          ],
+          "links": []
+        },
+        "lastListingId": "18420575",
+        "type": "SoldEvent"
+      },
+      "lastRental": {
+        "eventDate": "2020-02-07",
+        "rentedPrice": 420,
+        "type": "RentedEvent"
+      },
+      "recentlySold": true,
+      "isRestrictedSource": false,
+      "isSoldListing": true,
+      "hasVirtualTour": false,
+      "links": [
+        {
+          "rel": "self",
+          "href": "https://api-gateway-alb.cnsr-onthehouse-prod.aws.corelogic.io:443/properties/4103400"
+        },
+        {
+          "rel": "mainImage",
+          "href": "https://images.corelogic.asia/470x313/filters:stretch()/filters:watermark(cla-digital-assets-prod,watermarks/logo.png,-2p,-2p,30,16,16)/assets/perm/aegh6d2jbui6vkzbof2xtbmzbe?signature=a78cdbda9243056919cf07da6b4f6e1aaf6526a4ee7648ea183150387085c1db"
+        },
+        {
+          "rel": "othWebUrl",
+          "href": "https://www.onthehouse.com.au/property/qld/bli-bli-4560/5-casey-st-bli-bli-qld-4560-4103400"
+        }
+      ],
+      "id": "4103400"
+    },
+    {
+      "category": "Property",
+      "clPropertyId": "80604494",
+      "othPropertyId": "43084026",
+      "address": {
+        "formattedAddress": "52 CAMELOT CT, BLI BLI, QLD 4560",
+        "streetNumber": "52",
+        "streetName": "CAMELOT",
+        "streetType": "CT",
+        "suburb": "BLI BLI",
+        "stateCode": "QLD",
+        "postCode": "4560"
+      },
+      "landSizeUnit": "squareMeter",
+      "type": "Land",
+      "legalAttributes": {},
+      "lastSale": {
+        "eventDate": "2026-03-27",
+        "salePrice": 720000,
+        "saleSource": "VG",
+        "sellingAgency": {
+          "allowManualListings": false,
+          "agents": [],
+          "links": []
+        },
+        "type": "SoldEvent"
+      },
+      "recentlySold": true,
+      "isRestrictedSource": false,
+      "isSoldListing": false,
+      "hasVirtualTour": false,
+      "links": [
+        {
+          "rel": "self",
+          "href": "https://api-gateway-alb.cnsr-onthehouse-prod.aws.corelogic.io:443/properties/43084026"
+        },
+        {
+          "rel": "othWebUrl",
+          "href": "https://www.onthehouse.com.au/property/qld/bli-bli-4560/52-camelot-ct-bli-bli-qld-4560-43084026"
+        }
+      ],
+      "id": "43084026"
+    },
+    {
+      "category": "Property",
+      "clPropertyId": "17391767",
+      "othPropertyId": "39869124",
+      "address": {
+        "formattedAddress": "48 HISTED TCE, BLI BLI, QLD 4560",
+        "streetNumber": "48",
+        "streetName": "HISTED",
+        "streetType": "TCE",
+        "suburb": "BLI BLI",
+        "stateCode": "QLD",
+        "postCode": "4560",
+        "location": {
+          "lat": -26.62755458,
+          "lon": 153.03354973
+        }
+      },
+      "beds": 3,
+      "baths": 2,
+      "carSpaces": 3,
+      "landSize": 600,
+      "landSizeUnit": "squareMeter",
+      "type": "House",
+      "legalAttributes": {},
+      "guesstimate": {
+        "price": 1360000,
+        "calculationDate": "2026-06-08",
+        "errorRate": 0.07,
+        "fromPrice": 1300000,
+        "toPrice": 1400000,
+        "confidence": "High"
+      },
+      "lastSale": {
+        "eventDate": "2026-04-09",
+        "saleSource": "OTH",
+        "sellingAgency": {
+          "agencyId": "15962",
+          "name": "Ray White Bli Bli",
+          "logo": "https://img.othsolutions.com.au/agent-centre/franchise/ray_white/logo.png",
+          "accountStatus": "ACTIVE",
+          "allowManualListings": false,
+          "agents": [
+            {
+              "uuid": "63321",
+              "firstName": "Rachel",
+              "lastName": "Meyers",
+              "preferences": {
+                "INCLUDE_IN_SEARCH": "true"
+              },
+              "hasInvitationDate": false,
+              "hasActivatedInvitation": false,
+              "hasCurrentValidInvitation": false,
+              "name": "Rachel Meyers",
+              "links": [],
+              "headShot": "https://img.othsolutions.com.au/agent-centre/agent/63321/headshot.jpg?20260611003130",
+              "agencyId": "15962"
+            }
+          ],
+          "links": []
+        },
+        "lastListingId": "18407905",
+        "type": "SoldEvent"
+      },
+      "recentlySold": true,
+      "isRestrictedSource": false,
+      "isSoldListing": true,
+      "hasVirtualTour": false,
+      "links": [
+        {
+          "rel": "self",
+          "href": "https://api-gateway-alb.cnsr-onthehouse-prod.aws.corelogic.io:443/properties/39869124"
+        },
+        {
+          "rel": "mainImage",
+          "href": "https://images.corelogic.asia/470x313/filters:stretch()/filters:watermark(cla-digital-assets-prod,watermarks/logo.png,-2p,-2p,30,16,16)/assets/perm/fjo4shjebui7dm5xp4ifkqkbry?signature=e1c7b03e68ccdc5309c3dc550dc38f8029dfb56f1b5c18a50293482f8805d432"
+        },
+        {
+          "rel": "othWebUrl",
+          "href": "https://www.onthehouse.com.au/property/qld/bli-bli-4560/48-histed-tce-bli-bli-qld-4560-39869124"
+        }
+      ],
+      "id": "39869124"
+    },
+    {
+      "category": "Property",
+      "clPropertyId": "80604505",
+      "othPropertyId": "43511437",
+      "address": {
+        "formattedAddress": "1 KRONK CT, BLI BLI, QLD 4560",
+        "streetNumber": "1",
+        "streetName": "KRONK",
+        "streetType": "CT",
+        "suburb": "BLI BLI",
+        "stateCode": "QLD",
+        "postCode": "4560"
+      },
+      "beds": 0,
+      "baths": 0,
+      "landSizeUnit": "squareMeter",
+      "yearBuilt": 2026,
+      "type": "House",
+      "legalAttributes": {},
+      "guesstimate": {
+        "price": 790000,
+        "calculationDate": "2026-06-08",
+        "errorRate": 0.1,
+        "fromPrice": 750000,
+        "toPrice": 800000,
+        "confidence": "Medium-High"
+      },
+      "lastSale": {
+        "eventDate": "2026-03-26",
+        "salePrice": 710000,
+        "saleSource": "VG",
+        "sellingAgency": {
+          "allowManualListings": false,
+          "agents": [],
+          "links": []
+        },
+        "type": "SoldEvent"
+      },
+      "recentlySold": true,
+      "isRestrictedSource": false,
+      "isSoldListing": false,
+      "hasVirtualTour": false,
+      "links": [
+        {
+          "rel": "self",
+          "href": "https://api-gateway-alb.cnsr-onthehouse-prod.aws.corelogic.io:443/properties/43511437"
+        },
+        {
+          "rel": "othWebUrl",
+          "href": "https://www.onthehouse.com.au/property/qld/bli-bli-4560/1-kronk-ct-bli-bli-qld-4560-43511437"
+        }
+      ],
+      "id": "43511437"
+    },
+    {
+      "category": "Property",
+      "clPropertyId": "15467027",
+      "othPropertyId": "11158551",
+      "address": {
+        "formattedAddress": "12 CLARENCE AVE, BLI BLI, QLD 4560",
+        "streetNumber": "12",
+        "streetName": "CLARENCE",
+        "streetType": "AVE",
+        "suburb": "BLI BLI",
+        "stateCode": "QLD",
+        "postCode": "4560",
+        "location": {
+          "lat": -26.60596459,
+          "lon": 153.0211284
+        }
+      },
+      "beds": 4,
+      "baths": 2,
+      "carSpaces": 2,
+      "landSize": 600,
+      "landSizeUnit": "squareMeter",
+      "type": "House",
+      "legalAttributes": {},
+      "guesstimate": {
+        "price": 1280000,
+        "calculationDate": "2026-06-08",
+        "errorRate": 0.07,
+        "fromPrice": 1200000,
+        "toPrice": 1300000,
+        "confidence": "High"
+      },
+      "lastSale": {
+        "eventDate": "2026-03-30",
+        "salePrice": 1150000,
+        "saleSource": "OTH",
+        "sellingAgency": {
+          "agencyId": "1044",
+          "name": "First National Lifestyle ",
+          "logo": "https://img.othsolutions.com.au/agent-centre/agency/1044/logo.png",
+          "accountStatus": "ACTIVE",
+          "allowManualListings": false,
+          "agents": [
+            {
+              "uuid": "1577",
+              "firstName": "Stuart",
+              "lastName": "Pearson",
+              "preferences": {
+                "INCLUDE_IN_SEARCH": "true"
+              },
+              "hasInvitationDate": false,
+              "hasActivatedInvitation": false,
+              "hasCurrentValidInvitation": false,
+              "name": "Stuart Pearson",
+              "links": [],
+              "headShot": "https://img.othsolutions.com.au/agent-centre/agent/1577/headshot.jpg?20230819043932",
+              "agencyId": "1044"
+            }
+          ],
+          "links": []
+        },
+        "lastListingId": "18262779",
+        "type": "SoldEvent"
+      },
+      "recentlySold": true,
+      "isRestrictedSource": false,
+      "isSoldListing": true,
+      "hasVirtualTour": false,
+      "links": [
+        {
+          "rel": "self",
+          "href": "https://api-gateway-alb.cnsr-onthehouse-prod.aws.corelogic.io:443/properties/11158551"
+        },
+        {
+          "rel": "mainImage",
+          "href": "https://images.corelogic.asia/470x313/filters:stretch()/filters:watermark(cla-digital-assets-prod,watermarks/logo.png,-2p,-2p,30,16,16)/assets/perm/hf3u2kh4jai7biy4nwxg5uqu2q?signature=d1c7c176521ab510d7f25dd0839934aa0fc7f3e44ac13ca96365256ffb73fa12"
+        },
+        {
+          "rel": "othWebUrl",
+          "href": "https://www.onthehouse.com.au/property/qld/bli-bli-4560/12-clarence-ave-bli-bli-qld-4560-11158551"
+        }
+      ],
+      "id": "11158551"
+    },
+    {
+      "category": "Property",
+      "clPropertyId": "3090580",
+      "othPropertyId": "5509554",
+      "address": {
+        "formattedAddress": "8 BLI BLI RD, BLI BLI, QLD 4560",
+        "streetNumber": "8",
+        "streetName": "BLI BLI",
+        "streetType": "RD",
+        "suburb": "BLI BLI",
+        "stateCode": "QLD",
+        "postCode": "4560",
+        "location": {
+          "lat": -26.62196162,
+          "lon": 153.0399732
+        }
+      },
+      "beds": 4,
+      "baths": 2,
+      "carSpaces": 2,
+      "landSizeUnit": "squareMeter",
+      "yearBuilt": 1985,
+      "type": "Unit",
+      "legalAttributes": {},
+      "guesstimate": {
+        "price": 1150000,
+        "calculationDate": "2026-06-08",
+        "errorRate": 0.09,
+        "fromPrice": 1100000,
+        "toPrice": 1200000,
+        "confidence": "Medium-High"
+      },
+      "lastSale": {
+        "eventDate": "2026-03-20",
+        "salePrice": 1090000,
+        "saleSource": "RP",
+        "sellingAgency": {
+          "agencyId": "12441",
+          "name": "Image Property",
+          "logo": "https://img.othsolutions.com.au/agent-centre/agency/12441/logo.png",
+          "accountStatus": "ACTIVE",
+          "allowManualListings": false,
+          "agents": [],
+          "links": []
+        },
+        "type": "SoldEvent"
+      },
+      "lastRental": {
+        "eventDate": "2024-08-09",
+        "rentedPrice": 600,
+        "type": "RentedEvent"
+      },
+      "recentlySold": true,
+      "isRestrictedSource": false,
+      "isSoldListing": false,
+      "hasVirtualTour": false,
+      "links": [
+        {
+          "rel": "self",
+          "href": "https://api-gateway-alb.cnsr-onthehouse-prod.aws.corelogic.io:443/properties/5509554"
+        },
+        {
+          "rel": "mainImage",
+          "href": "https://images.corelogic.asia/470x313/filters:stretch()/filters:watermark(cla-digital-assets-prod,watermarks/logo.png,-2p,-2p,30,16,16)/assets/perm/hpap66rquai7bi5kpnteyf3yfm?signature=d016b1365cf8143558cd0e6bb77ae655be59fa7d4400c31ad38f83b04ce0d4e8"
+        },
+        {
+          "rel": "othWebUrl",
+          "href": "https://www.onthehouse.com.au/property/qld/bli-bli-4560/8-bli-bli-rd-bli-bli-qld-4560-5509554"
+        }
+      ],
+      "id": "5509554"
+    },
+    {
+      "category": "Property",
+      "clPropertyId": "3092039",
+      "othPropertyId": "3342998",
+      "address": {
+        "formattedAddress": "178-180 DAVID LOW WAY, BLI BLI, QLD 4560",
+        "streetNumber": "178-180",
+        "streetName": "DAVID LOW",
+        "streetType": "WAY",
+        "suburb": "BLI BLI",
+        "stateCode": "QLD",
+        "postCode": "4560",
+        "location": {
+          "lat": -26.6338882,
+          "lon": 153.03792994
+        }
+      },
+      "beds": 4,
+      "baths": 3,
+      "carSpaces": 2,
+      "landSizeUnit": "squareMeter",
+      "yearBuilt": 1940,
+      "type": "House",
+      "legalAttributes": {},
+      "guesstimate": {
+        "price": 1320000,
+        "calculationDate": "2026-06-08",
+        "errorRate": 0.08,
+        "fromPrice": 1300000,
+        "toPrice": 1400000,
+        "confidence": "High"
+      },
+      "lastSale": {
+        "eventDate": "2026-03-19",
+        "salePrice": 1399000,
+        "saleSource": "RP",
+        "sellingAgency": {
+          "agencyId": "16799",
+          "name": "Ray White Maroochydore",
+          "logo": "https://img.othsolutions.com.au/agent-centre/franchise/ray_white/logo.png",
+          "accountStatus": "ACTIVE",
+          "allowManualListings": false,
+          "agents": [],
+          "links": []
+        },
+        "type": "SoldEvent"
+      },
+      "lastRental": {
+        "eventDate": "2013-05-24",
+        "rentedPrice": 390,
+        "type": "RentedEvent"
+      },
+      "recentlySold": true,
+      "isRestrictedSource": false,
+      "isSoldListing": false,
+      "hasVirtualTour": false,
+      "links": [
+        {
+          "rel": "self",
+          "href": "https://api-gateway-alb.cnsr-onthehouse-prod.aws.corelogic.io:443/properties/3342998"
+        },
+        {
+          "rel": "mainImage",
+          "href": "https://images.corelogic.asia/470x313/filters:stretch()/filters:watermark(cla-digital-assets-prod,watermarks/logo.png,-2p,-2p,30,16,16)/assets/perm/m3eexkaonyi7dki755ynzl6gvy?signature=1222d2961393c5f1fba512b27e812f9145255ab9d36bdbb1cd06523231a27e52"
+        },
+        {
+          "rel": "othWebUrl",
+          "href": "https://www.onthehouse.com.au/property/qld/bli-bli-4560/178--180-david-low-way-bli-bli-qld-4560-3342998"
+        }
+      ],
+      "id": "3342998"
+    },
+    {
+      "category": "Property",
+      "clPropertyId": "80855313",
+      "othPropertyId": "43598240",
+      "address": {
+        "formattedAddress": "72B WILLIS RD, BLI BLI, QLD 4560",
+        "streetNumber": "72B",
+        "streetName": "WILLIS",
+        "streetType": "RD",
+        "suburb": "BLI BLI",
+        "stateCode": "QLD",
+        "postCode": "4560"
+      },
+      "landSizeUnit": "squareMeter",
+      "type": "Land",
+      "legalAttributes": {},
+      "lastSale": {
+        "eventDate": "2026-03-16",
+        "salePrice": 500000,
+        "saleSource": "VG",
+        "sellingAgency": {
+          "allowManualListings": false,
+          "agents": [],
+          "links": []
+        },
+        "type": "SoldEvent"
+      },
+      "recentlySold": true,
+      "isRestrictedSource": false,
+      "isSoldListing": false,
+      "hasVirtualTour": false,
+      "links": [
+        {
+          "rel": "self",
+          "href": "https://api-gateway-alb.cnsr-onthehouse-prod.aws.corelogic.io:443/properties/43598240"
+        },
+        {
+          "rel": "othWebUrl",
+          "href": "https://www.onthehouse.com.au/property/qld/bli-bli-4560/72b-willis-rd-bli-bli-qld-4560-43598240"
+        }
+      ],
+      "id": "43598240"
+    },
+    {
+      "category": "Property",
+      "clPropertyId": "3096525",
+      "othPropertyId": "5509634",
+      "address": {
+        "formattedAddress": "33 WILLIS RD, BLI BLI, QLD 4560",
+        "streetNumber": "33",
+        "streetName": "WILLIS",
+        "streetType": "RD",
+        "suburb": "BLI BLI",
+        "stateCode": "QLD",
+        "postCode": "4560",
+        "location": {
+          "lat": -26.60950499,
+          "lon": 153.03057063
+        }
+      },
+      "beds": 4,
+      "baths": 2,
+      "carSpaces": 2,
+      "floorSize": 276,
+      "landSize": 809,
+      "landSizeUnit": "squareMeter",
+      "type": "House",
+      "legalAttributes": {},
+      "guesstimate": {
+        "price": 1340000,
+        "calculationDate": "2026-06-08",
+        "errorRate": 0.08,
+        "fromPrice": 1300000,
+        "toPrice": 1400000,
+        "confidence": "High"
+      },
+      "lastSale": {
+        "eventDate": "2026-04-02",
+        "salePrice": 1325000,
+        "saleSource": "OTH",
+        "sellingAgency": {
+          "agencyId": "21339",
+          "name": "One Percent Property Sales",
+          "logo": "https://img.othsolutions.com.au/agent-centre/agency/21339/logo/bc74dc18-c377-4738-8194-0094b872fb41.png",
+          "accountStatus": "ACTIVE",
+          "allowManualListings": false,
+          "agents": [
+            {
+              "uuid": "256603",
+              "firstName": "Marsha",
+              "lastName": "Bruce",
+              "preferences": {
+                "INCLUDE_IN_SEARCH": "true"
+              },
+              "hasInvitationDate": false,
+              "hasActivatedInvitation": false,
+              "hasCurrentValidInvitation": false,
+              "name": "Marsha Bruce",
+              "links": [],
+              "agencyId": "21339"
+            }
+          ],
+          "links": []
+        },
+        "lastListingId": "18264486",
+        "type": "SoldEvent"
+      },
+      "lastRental": {
+        "eventDate": "2026-05-05",
+        "rentedPrice": 1050,
+        "type": "RentedEvent"
+      },
+      "recentlySold": true,
+      "isRestrictedSource": false,
+      "isSoldListing": true,
+      "hasVirtualTour": false,
+      "links": [
+        {
+          "rel": "self",
+          "href": "https://api-gateway-alb.cnsr-onthehouse-prod.aws.corelogic.io:443/properties/5509634"
+        },
+        {
+          "rel": "mainImage",
+          "href": "https://images.corelogic.asia/470x313/filters:stretch()/filters:watermark(cla-digital-assets-prod,watermarks/logo.png,-2p,-2p,30,16,16)/assets/perm/vg4zxpp4xqi7bmuc6mhnb4p2qy?signature=42612b42a16e62977fed32d75a477e3a5a3f10e87d126caf377e9f38234c58dc"
+        },
+        {
+          "rel": "othWebUrl",
+          "href": "https://www.onthehouse.com.au/property/qld/bli-bli-4560/33-willis-rd-bli-bli-qld-4560-5509634"
+        }
+      ],
+      "id": "5509634"
+    },
+    {
+      "category": "Property",
+      "clPropertyId": "48979367",
+      "othPropertyId": "39056798",
+      "address": {
+        "formattedAddress": "114/1 HALCYON WAY, BLI BLI, QLD 4560",
+        "unitNumber": "114",
+        "streetNumber": "1",
+        "streetName": "HALCYON",
+        "streetType": "WAY",
+        "suburb": "BLI BLI",
+        "stateCode": "QLD",
+        "postCode": "4560",
+        "location": {
+          "lat": -26.59692577,
+          "lon": 153.0233611
+        }
+      },
+      "beds": 2,
+      "baths": 2,
+      "carSpaces": 2,
+      "floorSize": 0,
+      "landSizeUnit": "squareMeter",
+      "type": "House",
+      "legalAttributes": {},
+      "guesstimate": {
+        "price": 1280000,
+        "calculationDate": "2026-06-08",
+        "errorRate": 0.12,
+        "fromPrice": 1200000,
+        "toPrice": 1300000,
+        "confidence": "Medium"
+      },
+      "lastSale": {
+        "eventDate": "2026-03-14",
+        "saleSource": "OTH",
+        "sellingAgency": {
+          "agencyId": "995",
+          "name": "ZEB Realty",
+          "logo": "https://img.othsolutions.com.au/agent-centre/agency/995/logo.png",
+          "accountStatus": "ACTIVE",
+          "allowManualListings": false,
+          "agents": [
+            {
+              "uuid": "55810",
+              "firstName": "ANN",
+              "lastName": "ELLISON",
+              "preferences": {
+                "INCLUDE_IN_SEARCH": "true"
+              },
+              "hasInvitationDate": false,
+              "hasActivatedInvitation": false,
+              "hasCurrentValidInvitation": false,
+              "name": "ANN ELLISON",
+              "links": [],
+              "agencyId": "995"
+            }
+          ],
+          "links": []
+        },
+        "lastListingId": "18080801",
+        "type": "SoldEvent"
+      },
+      "recentlySold": true,
+      "isRestrictedSource": false,
+      "isSoldListing": true,
+      "hasVirtualTour": false,
+      "links": [
+        {
+          "rel": "self",
+          "href": "https://api-gateway-alb.cnsr-onthehouse-prod.aws.corelogic.io:443/properties/39056798"
+        },
+        {
+          "rel": "mainImage",
+          "href": "https://images.corelogic.asia/470x313/filters:stretch()/filters:watermark(cla-digital-assets-prod,watermarks/logo.png,-2p,-2p,30,16,16)/assets/perm/rdiinttpfyi65lt6d4n6byiqna?signature=657a1a4b38585d7f99ca7836324e0e222ca88e57bedbf43b0da73ecc67441a4b"
+        },
+        {
+          "rel": "othWebUrl",
+          "href": "https://www.onthehouse.com.au/property/qld/bli-bli-4560/114-1-halcyon-way-bli-bli-qld-4560-39056798"
+        },
+        {
+          "rel": "youTubeVideoId",
+          "href": "https://youtu.be/bTXcjEYmwrU"
+        }
+      ],
+      "id": "39056798"
+    },
+    {
+      "category": "Property",
+      "clPropertyId": "50808028",
+      "othPropertyId": "41865353",
+      "address": {
+        "formattedAddress": "13 HILLGROVE CT, BLI BLI, QLD 4560",
+        "streetNumber": "13",
+        "streetName": "HILLGROVE",
+        "streetType": "CT",
+        "suburb": "BLI BLI",
+        "stateCode": "QLD",
+        "postCode": "4560",
+        "location": {
+          "lat": -26.61832921,
+          "lon": 153.03084284
+        }
+      },
+      "beds": 5,
+      "baths": 2,
+      "carSpaces": 3,
+      "landSize": 722,
+      "landSizeUnit": "squareMeter",
+      "type": "House",
+      "legalAttributes": {},
+      "guesstimate": {
+        "price": 1640000,
+        "calculationDate": "2026-06-08",
+        "errorRate": 0.07,
+        "fromPrice": 1600000,
+        "toPrice": 1800000,
+        "confidence": "High"
+      },
+      "lastSale": {
+        "eventDate": "2026-03-24",
+        "saleSource": "OTH",
+        "sellingAgency": {
+          "agencyId": "15962",
+          "name": "Ray White Bli Bli",
+          "logo": "https://img.othsolutions.com.au/agent-centre/franchise/ray_white/logo.png",
+          "accountStatus": "ACTIVE",
+          "allowManualListings": false,
+          "agents": [
+            {
+              "uuid": "142421",
+              "firstName": "Cameron",
+              "lastName": "Hackenberg",
+              "preferences": {
+                "INCLUDE_IN_SEARCH": "true"
+              },
+              "hasInvitationDate": false,
+              "hasActivatedInvitation": false,
+              "hasCurrentValidInvitation": false,
+              "name": "Cameron Hackenberg",
+              "links": [],
+              "agencyId": "15962"
+            },
+            {
+              "uuid": "231674",
+              "firstName": "Skye",
+              "lastName": "Woodman",
+              "preferences": {
+                "INCLUDE_IN_SEARCH": "true"
+              },
+              "hasInvitationDate": false,
+              "hasActivatedInvitation": false,
+              "hasCurrentValidInvitation": false,
+              "name": "Skye Woodman",
+              "links": [],
+              "agencyId": "15962"
+            }
+          ],
+          "links": []
+        },
+        "lastListingId": "18346655",
+        "type": "SoldEvent"
+      },
+      "recentlySold": true,
+      "isRestrictedSource": false,
+      "isSoldListing": true,
+      "hasVirtualTour": false,
+      "links": [
+        {
+          "rel": "self",
+          "href": "https://api-gateway-alb.cnsr-onthehouse-prod.aws.corelogic.io:443/properties/41865353"
+        },
+        {
+          "rel": "mainImage",
+          "href": "https://images.corelogic.asia/470x313/filters:stretch()/filters:watermark(cla-digital-assets-prod,watermarks/logo.png,-2p,-2p,30,16,16)/assets/perm/ot66ahytcii7daiyyoeg5i7wbm?signature=d0f05e17c1f3efeae7cf1e3356251d481387bc8e4e3de7dff6cdd4f9a498c181"
+        },
+        {
+          "rel": "othWebUrl",
+          "href": "https://www.onthehouse.com.au/property/qld/bli-bli-4560/13-hillgrove-ct-bli-bli-qld-4560-41865353"
+        }
+      ],
+      "id": "41865353"
+    },
+    {
+      "category": "Property",
+      "clPropertyId": "3093627",
+      "othPropertyId": "2587288",
+      "address": {
+        "formattedAddress": "4 KOKODA AVE, BLI BLI, QLD 4560",
+        "streetNumber": "4",
+        "streetName": "KOKODA",
+        "streetType": "AVE",
+        "suburb": "BLI BLI",
+        "stateCode": "QLD",
+        "postCode": "4560",
+        "location": {
+          "lat": -26.62872754,
+          "lon": 153.03942264
+        }
+      },
+      "beds": 4,
+      "baths": 2,
+      "carSpaces": 1,
+      "landSizeUnit": "squareMeter",
+      "type": "House",
+      "legalAttributes": {},
+      "guesstimate": {
+        "price": 1030000,
+        "calculationDate": "2026-06-08",
+        "errorRate": 0.08,
+        "fromPrice": 1000000,
+        "toPrice": 1100000,
+        "confidence": "High"
+      },
+      "lastSale": {
+        "eventDate": "2026-03-27",
+        "salePrice": 970000,
+        "saleSource": "OTH",
+        "sellingAgency": {
+          "agencyId": "21716",
+          "name": "Town Pty Ltd",
+          "logo": "https://img.othsolutions.com.au/agent-centre/agency/21716/logo.png",
+          "accountStatus": "ACTIVE",
+          "allowManualListings": false,
+          "agents": [
+            {
+              "uuid": "251929",
+              "firstName": "Naj",
+              "lastName": "Elsayed",
+              "preferences": {
+                "INCLUDE_IN_SEARCH": "true"
+              },
+              "hasInvitationDate": false,
+              "hasActivatedInvitation": false,
+              "hasCurrentValidInvitation": false,
+              "name": "Naj Elsayed",
+              "links": [],
+              "agencyId": "21716"
+            },
+            {
+              "uuid": "170024",
+              "firstName": "Jamie",
+              "lastName": "Vibert",
+              "preferences": {
+                "INCLUDE_IN_SEARCH": "true"
+              },
+              "hasInvitationDate": false,
+              "hasActivatedInvitation": false,
+              "hasCurrentValidInvitation": false,
+              "name": "Jamie Vibert",
+              "links": [],
+              "headShot": "https://img.othsolutions.com.au/agent-centre/agent/170024/headshot.png?20230801012843",
+              "agencyId": "21716"
+            }
+          ],
+          "links": []
+        },
+        "lastListingId": "18429265",
+        "type": "SoldEvent"
+      },
+      "recentlySold": true,
+      "isRestrictedSource": true,
+      "isSoldListing": true,
+      "hasVirtualTour": false,
+      "links": [
+        {
+          "rel": "self",
+          "href": "https://api-gateway-alb.cnsr-onthehouse-prod.aws.corelogic.io:443/properties/2587288"
+        },
+        {
+          "rel": "mainImage",
+          "href": "https://images.corelogic.asia/470x313/filters:stretch()/filters:watermark(cla-digital-assets-prod,watermarks/logo.png,-2p,-2p,30,16,16)/assets/perm/jaaculrjvqi7dfabyeygdj2vpq?signature=bd30f41c43253346c52d1d5e0d4b273abc682354d7076250a553726c98ad1b64"
+        },
+        {
+          "rel": "othWebUrl",
+          "href": "https://www.onthehouse.com.au/property/qld/bli-bli-4560/4-kokoda-ave-bli-bli-qld-4560-2587288"
+        }
+      ],
+      "id": "2587288"
+    },
+    {
+      "category": "Property",
+      "clPropertyId": "3095027",
+      "othPropertyId": "2685968",
+      "address": {
+        "formattedAddress": "17 RIVERSTONE PL, BLI BLI, QLD 4560",
+        "streetNumber": "17",
+        "streetName": "RIVERSTONE",
+        "streetType": "PL",
+        "suburb": "BLI BLI",
+        "stateCode": "QLD",
+        "postCode": "4560",
+        "location": {
+          "lat": -26.60444148,
+          "lon": 153.02704559
+        }
+      },
+      "beds": 4,
+      "baths": 2,
+      "carSpaces": 2,
+      "landSizeUnit": "squareMeter",
+      "yearBuilt": 2005,
+      "type": "House",
+      "legalAttributes": {},
+      "guesstimate": {
+        "price": 1350000,
+        "calculationDate": "2026-06-08",
+        "errorRate": 0.08,
+        "fromPrice": 1300000,
+        "toPrice": 1400000,
+        "confidence": "High"
+      },
+      "lastSale": {
+        "eventDate": "2026-03-13",
+        "salePrice": 1310000,
+        "saleSource": "VG",
+        "sellingAgency": {
+          "agencyId": "3164",
+          "name": "@realty",
+          "logo": "https://img.othsolutions.com.au/agent-centre/agency/3164/logo/fb6f6497-aa73-4efa-a07f-983509450828.png",
+          "banner": "https://img.othsolutions.com.au/agent-centre/agency/3164/banner/83d1a0e7-ef30-4ee1-8f48-00c09a133880.png",
+          "accountStatus": "ACTIVE",
+          "allowManualListings": false,
+          "agents": [
+            {
+              "uuid": "177586",
+              "username": "leanne.plummer@atrealty.com.au",
+              "email": "leanne.plummer@atrealty.com.au",
+              "firstName": "Leanne",
+              "lastName": "Plummer",
+              "mobileNumber": "0484234035",
+              "preferences": {
+                "INCLUDE_IN_SEARCH": "true"
+              },
+              "hasInvitationDate": false,
+              "hasActivatedInvitation": false,
+              "hasCurrentValidInvitation": false,
+              "name": "Leanne Plummer",
+              "contact": {
+                "email": "leanne.plummer@atrealty.com.au",
+                "phone": {
+                  "mobile": "0484234035"
+                }
+              },
+              "links": [],
+              "agencyId": "3164"
+            }
+          ],
+          "links": []
+        },
+        "type": "SoldEvent"
+      },
+      "recentlySold": true,
+      "isRestrictedSource": false,
+      "isSoldListing": false,
+      "hasVirtualTour": false,
+      "links": [
+        {
+          "rel": "self",
+          "href": "https://api-gateway-alb.cnsr-onthehouse-prod.aws.corelogic.io:443/properties/2685968"
+        },
+        {
+          "rel": "mainImage",
+          "href": "https://images.corelogic.asia/470x313/filters:stretch()/filters:watermark(cla-digital-assets-prod,watermarks/logo.png,-2p,-2p,30,16,16)/assets/perm/qzrv34pvhmi7bhdcnezc3nfrbu?signature=a16aae44052abca364d3e617b573cf4e76c99794865eba8bbda05d00fd32e0df"
+        },
+        {
+          "rel": "othWebUrl",
+          "href": "https://www.onthehouse.com.au/property/qld/bli-bli-4560/17-riverstone-pl-bli-bli-qld-4560-2685968"
+        }
+      ],
+      "id": "2685968"
+    },
+    {
+      "category": "Property",
+      "clPropertyId": "18038168",
+      "othPropertyId": "20007147",
+      "address": {
+        "formattedAddress": "1/7 HISTED TCE, BLI BLI, QLD 4560",
+        "unitNumber": "1",
+        "streetNumber": "7",
+        "streetName": "HISTED",
+        "streetType": "TCE",
+        "suburb": "BLI BLI",
+        "stateCode": "QLD",
+        "postCode": "4560",
+        "location": {
+          "lat": -26.62736175,
+          "lon": 153.03627735
+        }
+      },
+      "beds": 3,
+      "baths": 2,
+      "carSpaces": 2,
+      "landSizeUnit": "squareMeter",
+      "type": "House",
+      "legalAttributes": {},
+      "guesstimate": {
+        "price": 1030000,
+        "calculationDate": "2026-06-08",
+        "errorRate": 0.09,
+        "fromPrice": 1000000,
+        "toPrice": 1100000,
+        "confidence": "Medium-High"
+      },
+      "lastSale": {
+        "eventDate": "2026-03-19",
+        "salePrice": 970000,
+        "saleSource": "OTH",
+        "sellingAgency": {
+          "agencyId": "1044",
+          "name": "First National Lifestyle ",
+          "logo": "https://img.othsolutions.com.au/agent-centre/agency/1044/logo.png",
+          "accountStatus": "ACTIVE",
+          "allowManualListings": false,
+          "agents": [
+            {
+              "uuid": "1577",
+              "firstName": "Stuart",
+              "lastName": "Pearson",
+              "preferences": {
+                "INCLUDE_IN_SEARCH": "true"
+              },
+              "hasInvitationDate": false,
+              "hasActivatedInvitation": false,
+              "hasCurrentValidInvitation": false,
+              "name": "Stuart Pearson",
+              "links": [],
+              "headShot": "https://img.othsolutions.com.au/agent-centre/agent/1577/headshot.jpg?20230819043932",
+              "agencyId": "1044"
+            }
+          ],
+          "links": []
+        },
+        "lastListingId": "18370194",
+        "type": "SoldEvent"
+      },
+      "recentlySold": true,
+      "isRestrictedSource": false,
+      "isSoldListing": true,
+      "hasVirtualTour": false,
+      "links": [
+        {
+          "rel": "self",
+          "href": "https://api-gateway-alb.cnsr-onthehouse-prod.aws.corelogic.io:443/properties/20007147"
+        },
+        {
+          "rel": "mainImage",
+          "href": "https://images.corelogic.asia/470x313/filters:stretch()/filters:watermark(cla-digital-assets-prod,watermarks/logo.png,-2p,-2p,30,16,16)/assets/perm/cqmte4azlmi7dl2qqn5umghazy?signature=02a22801b8511992ff98192dc1c4f4c1e64e0a30bb2c302495b07bdff38d20b6"
+        },
+        {
+          "rel": "othWebUrl",
+          "href": "https://www.onthehouse.com.au/property/qld/bli-bli-4560/1-7-histed-tce-bli-bli-qld-4560-20007147"
+        }
+      ],
+      "id": "20007147"
+    },
+    {
+      "category": "Property",
+      "clPropertyId": "3093496",
+      "othPropertyId": "5509537",
+      "address": {
+        "formattedAddress": "1 KENNEDY RD, BLI BLI, QLD 4560",
+        "streetNumber": "1",
+        "streetName": "KENNEDY",
+        "streetType": "RD",
+        "suburb": "BLI BLI",
+        "stateCode": "QLD",
+        "postCode": "4560",
+        "location": {
+          "lat": -26.61914263,
+          "lon": 153.03748749
+        }
+      },
+      "beds": 4,
+      "baths": 2,
+      "carSpaces": 2,
+      "floorSize": 243,
+      "landSize": 809,
+      "landSizeUnit": "squareMeter",
+      "type": "House",
+      "legalAttributes": {},
+      "guesstimate": {
+        "price": 1100000,
+        "calculationDate": "2026-06-08",
+        "errorRate": 0.07,
+        "fromPrice": 1000000,
+        "toPrice": 1100000,
+        "confidence": "High"
+      },
+      "lastSale": {
+        "eventDate": "2026-03-11",
+        "salePrice": 1060000,
+        "saleSource": "OTH",
+        "sellingAgency": {
+          "agencyId": "379",
+          "name": "REMAX Property Sales",
+          "logo": "https://img.othsolutions.com.au/agent-centre/agency/379/logo/59db68cd-428b-4f5c-b6bd-028111b9fe94.png",
+          "accountStatus": "ACTIVE",
+          "allowManualListings": false,
+          "agents": [
+            {
+              "uuid": "139840",
+              "firstName": "Tristan",
+              "lastName": "Brown",
+              "preferences": {
+                "INCLUDE_IN_SEARCH": "true"
+              },
+              "hasInvitationDate": false,
+              "hasActivatedInvitation": false,
+              "hasCurrentValidInvitation": false,
+              "name": "Tristan Brown",
+              "links": [],
+              "headShot": "https://img.othsolutions.com.au/agent-centre/agent/139840/headshot/e5441656-612b-4644-9cd6-1d1a6b231d71.png?20251106153019",
+              "agencyId": "379"
+            },
+            {
+              "uuid": "177602",
+              "firstName": "Garren",
+              "lastName": "Reisinger",
+              "preferences": {
+                "INCLUDE_IN_SEARCH": "true"
+              },
+              "hasInvitationDate": false,
+              "hasActivatedInvitation": false,
+              "hasCurrentValidInvitation": false,
+              "name": "Garren Reisinger",
+              "links": [],
+              "headShot": "https://img.othsolutions.com.au/agent-centre/agent/177602/headshot/1272dfe3-8ee2-45bc-9132-f28db1405acc.png?20251104153026",
+              "agencyId": "379"
+            }
+          ],
+          "links": []
+        },
+        "lastListingId": "18343250",
+        "type": "SoldEvent"
+      },
+      "lastRental": {
+        "eventDate": "2020-02-26",
+        "rentedPrice": 500,
+        "type": "RentedEvent"
+      },
+      "recentlySold": true,
+      "isRestrictedSource": false,
+      "isSoldListing": true,
+      "hasVirtualTour": false,
+      "links": [
+        {
+          "rel": "self",
+          "href": "https://api-gateway-alb.cnsr-onthehouse-prod.aws.corelogic.io:443/properties/5509537"
+        },
+        {
+          "rel": "mainImage",
+          "href": "https://images.corelogic.asia/470x313/filters:stretch()/filters:watermark(cla-digital-assets-prod,watermarks/logo.png,-2p,-2p,30,16,16)/assets/perm/z5ad7kar6ui7dawh4mv2j2qpf4?signature=7a98ff90eaa42f5ee7e419e622dfd102cd913650277b75f15c3c9625b7c78994"
+        },
+        {
+          "rel": "othWebUrl",
+          "href": "https://www.onthehouse.com.au/property/qld/bli-bli-4560/1-kennedy-rd-bli-bli-qld-4560-5509537"
+        }
+      ],
+      "id": "5509537"
+    },
+    {
+      "category": "Property",
+      "clPropertyId": "80604503",
+      "othPropertyId": "43405635",
+      "address": {
+        "formattedAddress": "5 KRONK CT, BLI BLI, QLD 4560",
+        "streetNumber": "5",
+        "streetName": "KRONK",
+        "streetType": "CT",
+        "suburb": "BLI BLI",
+        "stateCode": "QLD",
+        "postCode": "4560",
+        "location": {
+          "lat": -26.59945371,
+          "lon": 153.02575504
+        }
+      },
+      "landSize": 828,
+      "landSizeUnit": "squareMeter",
+      "type": "Land",
+      "legalAttributes": {},
+      "lastSale": {
+        "eventDate": "2026-03-18",
+        "saleSource": "OTH",
+        "sellingAgency": {
+          "agencyId": "15962",
+          "name": "Ray White Bli Bli",
+          "logo": "https://img.othsolutions.com.au/agent-centre/franchise/ray_white/logo.png",
+          "accountStatus": "ACTIVE",
+          "allowManualListings": false,
+          "agents": [
+            {
+              "uuid": "63321",
+              "firstName": "Rachel",
+              "lastName": "Meyers",
+              "preferences": {
+                "INCLUDE_IN_SEARCH": "true"
+              },
+              "hasInvitationDate": false,
+              "hasActivatedInvitation": false,
+              "hasCurrentValidInvitation": false,
+              "name": "Rachel Meyers",
+              "links": [],
+              "headShot": "https://img.othsolutions.com.au/agent-centre/agent/63321/headshot.jpg?20260611003130",
+              "agencyId": "15962"
+            }
+          ],
+          "links": []
+        },
+        "lastListingId": "17945480",
+        "type": "SoldEvent"
+      },
+      "recentlySold": true,
+      "isRestrictedSource": false,
+      "isSoldListing": true,
+      "hasVirtualTour": false,
+      "links": [
+        {
+          "rel": "self",
+          "href": "https://api-gateway-alb.cnsr-onthehouse-prod.aws.corelogic.io:443/properties/43405635"
+        },
+        {
+          "rel": "mainImage",
+          "href": "https://images.corelogic.asia/470x313/filters:stretch()/filters:watermark(cla-digital-assets-prod,watermarks/logo.png,-2p,-2p,30,16,16)/assets/perm/ebr2bx4234i7bld3xm7fto4tga?signature=e9cfc1736c5a96915e84ea2bdcf09136a54fb8f06921599a8125454884013879"
+        },
+        {
+          "rel": "othWebUrl",
+          "href": "https://www.onthehouse.com.au/property/qld/bli-bli-4560/5-kronk-ct-bli-bli-qld-4560-43405635"
+        }
+      ],
+      "id": "43405635"
+    },
+    {
+      "category": "Property",
+      "clPropertyId": "3095421",
+      "othPropertyId": "4249492",
+      "address": {
+        "formattedAddress": "4 SCHOOL RD, BLI BLI, QLD 4560",
+        "streetNumber": "4",
+        "streetName": "SCHOOL",
+        "streetType": "RD",
+        "suburb": "BLI BLI",
+        "stateCode": "QLD",
+        "postCode": "4560",
+        "location": {
+          "lat": -26.61594337,
+          "lon": 153.03018815
+        }
+      },
+      "beds": 4,
+      "baths": 2,
+      "carSpaces": 2,
+      "landSize": 1100,
+      "landSizeUnit": "squareMeter",
+      "type": "House",
+      "legalAttributes": {},
+      "guesstimate": {
+        "price": 1110000,
+        "calculationDate": "2026-06-08",
+        "errorRate": 0.08,
+        "fromPrice": 1100000,
+        "toPrice": 1200000,
+        "confidence": "High"
+      },
+      "lastSale": {
+        "eventDate": "2026-03-07",
+        "salePrice": 1025000,
+        "saleSource": "OTH",
+        "sellingAgency": {
+          "agencyId": "16799",
+          "name": "Ray White Maroochydore",
+          "logo": "https://img.othsolutions.com.au/agent-centre/franchise/ray_white/logo.png",
+          "accountStatus": "ACTIVE",
+          "allowManualListings": false,
+          "agents": [
+            {
+              "uuid": "4863",
+              "firstName": "Jason",
+              "lastName": "Mills",
+              "preferences": {
+                "INCLUDE_IN_SEARCH": "true"
+              },
+              "hasInvitationDate": false,
+              "hasActivatedInvitation": false,
+              "hasCurrentValidInvitation": false,
+              "name": "Jason Mills",
+              "links": [],
+              "headShot": "https://img.othsolutions.com.au/agent-centre/agent/4863/headshot.jpg?20260611070143",
+              "agencyId": "16799"
+            }
+          ],
+          "links": []
+        },
+        "lastListingId": "18293767",
+        "type": "SoldEvent"
+      },
+      "lastRental": {
+        "eventDate": "2016-05-09",
+        "rentedPrice": 410,
+        "type": "RentedEvent"
+      },
+      "recentlySold": true,
+      "isRestrictedSource": false,
+      "isSoldListing": true,
+      "hasVirtualTour": false,
+      "links": [
+        {
+          "rel": "self",
+          "href": "https://api-gateway-alb.cnsr-onthehouse-prod.aws.corelogic.io:443/properties/4249492"
+        },
+        {
+          "rel": "mainImage",
+          "href": "https://images.corelogic.asia/470x313/filters:stretch()/filters:watermark(cla-digital-assets-prod,watermarks/logo.png,-2p,-2p,30,16,16)/assets/perm/k3cwuzyfmui7dpochhyyzaryyq?signature=ebd61489146a967cb2fa5cc073dd71afa3a5920c1f551cf37de4b7bf5ffe7989"
+        },
+        {
+          "rel": "othWebUrl",
+          "href": "https://www.onthehouse.com.au/property/qld/bli-bli-4560/4-school-rd-bli-bli-qld-4560-4249492"
+        }
+      ],
+      "id": "4249492"
+    },
+    {
+      "category": "Property",
+      "clPropertyId": "14974656",
+      "othPropertyId": "5918315",
+      "address": {
+        "formattedAddress": "13 GINGER BELL AVE, BLI BLI, QLD 4560",
+        "streetNumber": "13",
+        "streetName": "GINGER BELL",
+        "streetType": "AVE",
+        "suburb": "BLI BLI",
+        "stateCode": "QLD",
+        "postCode": "4560",
+        "location": {
+          "lat": -26.607029,
+          "lon": 153.02238736
+        }
+      },
+      "beds": 4,
+      "baths": 2,
+      "carSpaces": 2,
+      "landSizeUnit": "squareMeter",
+      "yearBuilt": 2012,
+      "type": "House",
+      "legalAttributes": {},
+      "guesstimate": {
+        "price": 1380000,
+        "calculationDate": "2026-06-08",
+        "errorRate": 0.08,
+        "fromPrice": 1300000,
+        "toPrice": 1400000,
+        "confidence": "High"
+      },
+      "lastSale": {
+        "eventDate": "2026-03-07",
+        "salePrice": 1325000,
+        "saleSource": "VG",
+        "sellingAgency": {
+          "agencyId": "8958",
+          "name": "Harcourts Property Centre",
+          "logo": "https://img.othsolutions.com.au/agent-centre/agency/8958/logo.png",
+          "accountStatus": "ACTIVE",
+          "allowManualListings": false,
+          "agents": [
+            {
+              "uuid": "249212",
+              "username": "catriona.cross@harcourts.com.au",
+              "email": "catriona.cross@harcourts.com.au",
+              "firstName": "Catriona",
+              "lastName": "Cross",
+              "mobileNumber": "0402485538",
+              "preferences": {
+                "INCLUDE_IN_SEARCH": "true"
+              },
+              "hasInvitationDate": false,
+              "hasActivatedInvitation": false,
+              "hasCurrentValidInvitation": false,
+              "name": "Catriona Cross",
+              "contact": {
+                "email": "catriona.cross@harcourts.com.au",
+                "phone": {
+                  "mobile": "0402485538"
+                }
+              },
+              "links": [],
+              "agencyId": "8958"
+            },
+            {
+              "uuid": "257148",
+              "username": "ryan.anthony@harcourts.com.au",
+              "email": "ryan.anthony@harcourts.com.au",
+              "firstName": "Ryan",
+              "lastName": "Anthony",
+              "mobileNumber": "0468792615",
+              "preferences": {
+                "INCLUDE_IN_SEARCH": "true"
+              },
+              "hasInvitationDate": false,
+              "hasActivatedInvitation": false,
+              "hasCurrentValidInvitation": false,
+              "name": "Ryan Anthony",
+              "contact": {
+                "email": "ryan.anthony@harcourts.com.au",
+                "phone": {
+                  "mobile": "0468792615"
+                }
+              },
+              "links": [],
+              "agencyId": "8958"
+            }
+          ],
+          "links": []
+        },
+        "type": "SoldEvent"
+      },
+      "lastRental": {
+        "eventDate": "2022-11-16",
+        "rentedPrice": 790,
+        "type": "RentedEvent"
+      },
+      "recentlySold": true,
+      "isRestrictedSource": false,
+      "isSoldListing": false,
+      "hasVirtualTour": false,
+      "links": [
+        {
+          "rel": "self",
+          "href": "https://api-gateway-alb.cnsr-onthehouse-prod.aws.corelogic.io:443/properties/5918315"
+        },
+        {
+          "rel": "mainImage",
+          "href": "https://images.corelogic.asia/470x313/filters:stretch()/filters:watermark(cla-digital-assets-prod,watermarks/logo.png,-2p,-2p,30,16,16)/assets/perm/cs7lvgdo2qi65ix6fxzzbzmv6a?signature=59ff7d7e8e35c14c4dfd343c879852b6c82e8fce8bd8762439d1a67971b9d3b1"
+        },
+        {
+          "rel": "othWebUrl",
+          "href": "https://www.onthehouse.com.au/property/qld/bli-bli-4560/13-ginger-bell-ave-bli-bli-qld-4560-5918315"
+        }
+      ],
+      "id": "5918315"
+    }
+  ],
+  "pageable": {
+    "sort": {
+      "sorted": false,
+      "unsorted": true,
+      "empty": true
+    },
+    "offset": 20,
+    "pageSize": 20,
+    "pageNumber": 1,
+    "paged": true,
+    "unpaged": false
+  },
+  "totalElements": 197,
+  "totalPages": 10,
+  "last": false,
+  "size": 20,
+  "number": 1,
+  "sort": {
+    "sorted": false,
+    "unsorted": true,
+    "empty": true
+  },
+  "first": false,
+  "numberOfElements": 20,
+  "empty": false
+}
