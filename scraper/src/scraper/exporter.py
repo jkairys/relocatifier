@@ -17,8 +17,13 @@ from pathlib import Path
 
 from scraper.storage import connect
 
-SCHEMA_VERSION = 1
+SCHEMA_VERSION = 2
 _WINDOW_MONTHS = 12
+
+# Property types excluded from the sales artifact (the exporter filters; DuckDB
+# keeps storing every type as raw provenance). Everything else — House,
+# Townhouse, DuplexSemi-detached, AcreageSemi-rural, Unknown/null — is retained.
+EXCLUDED_PROPERTY_TYPES = frozenset({"Unit", "Apartment", "Land", "Commercial"})
 
 
 def _iso(dt: datetime) -> str:
@@ -59,7 +64,8 @@ def build_sales_payload(
                 )
                 SELECT p.formatted_address, latest.price, latest.price_display,
                        latest.bedrooms, latest.bathrooms, latest.parking,
-                       latest.land_size_sqm, latest.property_type, l.sale_date
+                       latest.land_size_sqm, latest.property_type, l.sale_date,
+                       p.lat, p.lon
                 FROM latest
                 JOIN listing l ON l.listing_uid = latest.listing_uid
                 JOIN property p ON p.property_uid = l.property_uid
@@ -83,6 +89,8 @@ def build_sales_payload(
                     "sale_date": sale_date.isoformat()
                     if isinstance(sale_date, date)
                     else sale_date,
+                    "lat": lat,
+                    "lon": lon,
                 }
                 for (
                     address,
@@ -94,7 +102,10 @@ def build_sales_payload(
                     land_size_sqm,
                     property_type,
                     sale_date,
+                    lat,
+                    lon,
                 ) in rows
+                if property_type not in EXCLUDED_PROPERTY_TYPES
             ]
 
             fetched_at = _iso(last_run_at) if isinstance(last_run_at, datetime) else None

@@ -961,6 +961,61 @@ body {
   text-decoration: underline;
 }
 
+/* ---------- Recent-sales dot popup ---------- */
+
+.sale-popup-shell .maplibregl-popup-content {
+  padding: 10px 12px;
+  border-radius: 10px;
+  border: 1px solid var(--hairline);
+  box-shadow: var(--shadow);
+  font-family: var(--font);
+  color: var(--ink);
+}
+
+.sale-popup-shell .maplibregl-popup-close-button {
+  font-size: 16px;
+  color: var(--ink-faint);
+  padding: 0 4px;
+}
+
+.sale-popup-address {
+  margin: 0;
+  font-size: 12px;
+  font-weight: 600;
+  color: var(--ink);
+  padding-right: 12px;
+}
+
+.sale-popup-price {
+  margin: 4px 0 0;
+  font-size: 13px;
+  font-weight: 700;
+  color: var(--accent);
+  font-variant-numeric: tabular-nums;
+}
+
+.sale-popup-meta {
+  margin: 2px 0 0;
+  font-size: 11px;
+  color: var(--ink-soft);
+}
+
+.sale-popup-specs {
+  margin: 4px 0 0;
+  font-size: 11.5px;
+  color: var(--ink-soft);
+  font-variant-numeric: tabular-nums;
+}
+
+.sale-popup-type {
+  margin: 2px 0 0;
+  font-size: 10.5px;
+  font-weight: 600;
+  letter-spacing: 0.03em;
+  text-transform: uppercase;
+  color: var(--ink-faint);
+}
+
 /* ---------- Watchlist controls (stat sheet) ---------- */
 
 .watchlist-controls {

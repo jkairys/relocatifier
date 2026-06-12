@@ -19,6 +19,12 @@ tasks:
     cmds:
       - uv run uvicorn scraper.api:app --port 8210 --reload
 
+  scraper:export:
+    desc: Regenerate sales.json from the existing DuckDB store (no scraping)
+    dir: scraper
+    cmds:
+      - uv run python -m scraper.export_cli
+
   scraper:test:
     desc: Run scraper unit tests (no network)
     dir: scraper

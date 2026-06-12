@@ -9,12 +9,22 @@ import { Protocol } from "pmtiles";
 import { colorFor, NO_DATA_COLOR } from "./color";
 import {
   LAYER_REGISTRY,
+  SALES_DOTS_LAYER,
   SUBURB_ACTIVE_LAYER,
   SUBURB_FILL_LAYER,
   SUBURB_LINE_LAYER,
 } from "./layers";
 import { formatValue } from "./metrics";
-import type { Artifacts, MapApi, MetricsArtifact, PickedSuburb } from "./types";
+import { formatSaleDate, formatSalePrice } from "./sales";
+import { buildSaleDots, saleDotColor } from "./salesDots";
+import type {
+  Artifacts,
+  MapApi,
+  MetricsArtifact,
+  PickedSuburb,
+  SaleRecord,
+  SalesArtifact,
+} from "./types";
 
 maplibregl.addProtocol("pmtiles", new Protocol().tile);
 
@@ -28,6 +38,7 @@ const SEARCH_ZONE_BOUNDS: [[number, number], [number, number]] = [
 ];
 const SOURCE_ID = "suburbs";
 const SOURCE_LAYER = "suburbs";
+const SALES_SOURCE_ID = "sales";
 const ACCENT = "#3554d1";
 /** Outline for pinned (shortlisted) suburbs — distinct from hover/selected. */
 const PIN_COLOR = "#c026d3";
@@ -39,6 +50,8 @@ interface MapViewProps {
   selectedSalCode: string | null;
   pinnedSalCodes: readonly string[];
   layerVisibility: Record<string, boolean>;
+  /** Recent-sales artifact, or null when absent (dots layer not added). */
+  sales: SalesArtifact | null;
   mapApiRef: { current: MapApi | null };
   onPick: (suburb: PickedSuburb | null) => void;
 }
@@ -66,6 +79,56 @@ function pickedFrom(feature: MapGeoJSONFeature): PickedSuburb | null {
   };
 }
 
+/** Escape user/vendor strings before injecting into popup HTML. */
+function esc(value: string): string {
+  return value
+    .replace(/&/g, "&amp;")
+    .replace(/</g, "&lt;")
+    .replace(/>/g, "&gt;")
+    .replace(/"/g, "&quot;");
+}
+
+/** Read a feature property as a SaleRecord field, normalising types. */
+function saleFromProps(props: Record<string, unknown>): SaleRecord {
+  const numOrNull = (v: unknown): number | null =>
+    typeof v === "number" && Number.isFinite(v) ? v : null;
+  const strOrNull = (v: unknown): string | null =>
+    typeof v === "string" && v !== "" ? v : null;
+  return {
+    address: typeof props["address"] === "string" ? props["address"] : "",
+    price: numOrNull(props["price"]),
+    price_display: strOrNull(props["price_display"]),
+    bedrooms: numOrNull(props["bedrooms"]),
+    bathrooms: numOrNull(props["bathrooms"]),
+    parking: numOrNull(props["parking"]),
+    land_size_sqm: numOrNull(props["land_size_sqm"]),
+    property_type: strOrNull(props["property_type"]),
+    sale_date: strOrNull(props["sale_date"]),
+    lat: numOrNull(props["lat"]),
+    lon: numOrNull(props["lon"]),
+  };
+}
+
+/** Small markup for a sales dot popup; matches stat-sheet sales styling. */
+function salePopupHtml(sale: SaleRecord): string {
+  const specs: string[] = [];
+  if (sale.bedrooms != null) specs.push(`${sale.bedrooms} bd`);
+  if (sale.bathrooms != null) specs.push(`${sale.bathrooms} ba`);
+  if (sale.land_size_sqm != null) specs.push(`${sale.land_size_sqm} m²`);
+  const type = sale.property_type != null ? esc(sale.property_type) : "";
+  return [
+    `<div class="sale-popup">`,
+    `<p class="sale-popup-address">${esc(sale.address)}</p>`,
+    `<p class="sale-popup-price">${esc(formatSalePrice(sale))}</p>`,
+    `<p class="sale-popup-meta">${esc(formatSaleDate(sale.sale_date))}</p>`,
+    specs.length > 0
+      ? `<p class="sale-popup-specs">${specs.map(esc).join(" · ")}</p>`
+      : "",
+    type !== "" ? `<p class="sale-popup-type">${type}</p>` : "",
+    `</div>`,
+  ].join("");
+}
+
 /** Paint every suburb's fill colour for one metric via feature-state. */
 function applyMetricColors(
   map: maplibregl.Map,
@@ -88,10 +151,12 @@ export function MapView({
   selectedSalCode,
   pinnedSalCodes,
   layerVisibility,
+  sales,
   mapApiRef,
   onPick,
 }: MapViewProps) {
   const containerRef = useRef<HTMLDivElement>(null);
+  const salesPopupRef = useRef<maplibregl.Popup | null>(null);
   const tooltipRef = useRef<HTMLDivElement>(null);
   const tipNameRef = useRef<HTMLSpanElement>(null);
   const tipValueRef = useRef<HTMLSpanElement>(null);
@@ -108,6 +173,9 @@ export function MapView({
   const hoveredRef = useRef<string | null>(null);
   const selectedRef = useRef<string | null>(null);
   const pinnedRef = useRef<ReadonlySet<string>>(new Set());
+  // Live ref so the dots layer can read its current toggle state on first add.
+  const layerVisibilityRef = useRef(layerVisibility);
+  layerVisibilityRef.current = layerVisibility;
   const isVector = artifacts?.source.kind === "pmtiles";
 
   // Create the map once.
@@ -311,11 +379,45 @@ export function MapView({
       scheduleTip();
     });
     map.on("click", (e) => {
+      // A sales dot under the cursor handles its own click (popup) and must
+      // not also fall through to suburb selection.
+      const hitDot =
+        map.getLayer(SALES_DOTS_LAYER) != null &&
+        map.queryRenderedFeatures(e.point, { layers: [SALES_DOTS_LAYER] }).length > 0;
+      if (hitDot) return;
       const features = map.getLayer(SUBURB_FILL_LAYER)
         ? map.queryRenderedFeatures(e.point, { layers: [SUBURB_FILL_LAYER] })
         : [];
       const first = features[0];
       onPickRef.current(first ? pickedFrom(first) : null);
+    });
+
+    // Sales dot: open a single popup; pointer cursor on hover.
+    map.on("click", SALES_DOTS_LAYER, (e: MapLayerMouseEvent) => {
+      const feature = e.features?.[0];
+      if (feature == null) return;
+      const sale = saleFromProps(feature.properties as Record<string, unknown>);
+      const geom = feature.geometry;
+      const coords: [number, number] =
+        geom.type === "Point"
+          ? [geom.coordinates[0]!, geom.coordinates[1]!]
+          : [e.lngLat.lng, e.lngLat.lat];
+      salesPopupRef.current?.remove();
+      salesPopupRef.current = new maplibregl.Popup({
+        closeButton: true,
+        closeOnClick: true,
+        maxWidth: "240px",
+        className: "sale-popup-shell",
+      })
+        .setLngLat(coords)
+        .setHTML(salePopupHtml(sale))
+        .addTo(map);
+    });
+    map.on("mouseenter", SALES_DOTS_LAYER, () => {
+      map.getCanvas().style.cursor = "pointer";
+    });
+    map.on("mouseleave", SALES_DOTS_LAYER, () => {
+      map.getCanvas().style.cursor = "";
     });
 
     setLayersReady(true);
@@ -361,6 +463,70 @@ export function MapView({
     }
     pinnedRef.current = next;
   }, [layersReady, pinnedSalCodes, isVector]);
+
+  // Recent-sales dots: build a GeoJSON source + circle layer from the artifact.
+  // Absent-safe (no source when sales is null/empty) and refreshes on reload.
+  useEffect(() => {
+    const map = mapRef.current;
+    if (map == null || !layersReady) return;
+
+    const data = sales != null ? buildSaleDots(sales) : null;
+    const existing = map.getSource(SALES_SOURCE_ID) as
+      | maplibregl.GeoJSONSource
+      | undefined;
+
+    // Nothing to plot: tear down any prior dots layer/source + popup.
+    if (data == null || data.features.length === 0) {
+      salesPopupRef.current?.remove();
+      salesPopupRef.current = null;
+      if (map.getLayer(SALES_DOTS_LAYER) != null) map.removeLayer(SALES_DOTS_LAYER);
+      if (existing != null) map.removeSource(SALES_SOURCE_ID);
+      return;
+    }
+
+    if (existing != null) {
+      existing.setData(data); // refresh after a run
+    } else {
+      map.addSource(SALES_SOURCE_ID, { type: "geojson", data });
+    }
+
+    if (map.getLayer(SALES_DOTS_LAYER) == null) {
+      // Above the choropleth fill, below basemap labels.
+      const beforeId = map.getStyle().layers.find((l) => l.type === "symbol")?.id;
+      map.addLayer(
+        {
+          id: SALES_DOTS_LAYER,
+          type: "circle",
+          source: SALES_SOURCE_ID,
+          paint: {
+            "circle-color": saleDotColor(),
+            "circle-radius": [
+              "interpolate",
+              ["linear"],
+              ["zoom"],
+              8,
+              3,
+              12,
+              5,
+              15,
+              7,
+            ],
+            "circle-stroke-width": 1,
+            "circle-stroke-color": "#ffffff",
+            "circle-opacity": 0.95,
+          },
+        },
+        beforeId,
+      );
+      // Honour the current toggle state for the freshly-added layer.
+      const visible = layerVisibilityRef.current["sales"] ?? true;
+      map.setLayoutProperty(
+        SALES_DOTS_LAYER,
+        "visibility",
+        visible ? "visible" : "none",
+      );
+    }
+  }, [layersReady, sales]);
 
   // Apply layer-toggle visibility.
   useEffect(() => {

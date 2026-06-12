@@ -17,6 +17,7 @@ from pydantic import BaseModel
 
 from scraper import watchlist
 from scraper.config import Settings, load_settings
+from scraper.exporter import export_sales
 from scraper.resolver import (
     SalNotFoundError,
     SlugResolutionError,
@@ -97,6 +98,13 @@ def create_app(settings: Settings | None = None) -> FastAPI:
             sal_codes,
         )
         return {"run_id": run_id}
+
+    @app.post("/export")
+    def export() -> dict:
+        """Regenerate sales.json from the existing store, no scraping. Fast and
+        synchronous — used whenever the artifact schema changes."""
+        written = export_sales(settings.duckdb_path, settings.sales_artifact_path)
+        return {"status": "ok", "path": str(written)}
 
     @app.get("/runs")
     def recent_runs(limit: int = 10) -> list[dict]:

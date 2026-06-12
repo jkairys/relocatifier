@@ -73,6 +73,10 @@ export interface SaleRecord {
   property_type: string | null;
   /** ISO date (YYYY-MM-DD); null when unknown. */
   sale_date: string | null;
+  /** WGS84 latitude of the property; null when it has no coordinates. */
+  lat: number | null;
+  /** WGS84 longitude of the property; null when it has no coordinates. */
+  lon: number | null;
 }
 
 /** Sales for one suburb, keyed by SAL code in the artifact. */

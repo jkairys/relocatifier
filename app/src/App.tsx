@@ -29,6 +29,11 @@ export default function App() {
   const scraper = useScraper(reloadSales);
   const mapApiRef = useRef<MapApi | null>(null);
 
+  // The "Recent sales" toggle only appears once sales.json carries any sales.
+  const salesHasData =
+    sales != null &&
+    Object.values(sales.suburbs).some((s) => s.sales.length > 0);
+
   // Once the artifact arrives, default to the first metric that has data.
   useEffect(() => {
     if (artifacts != null && artifacts.metrics.metrics[selectedMetricId] == null) {
@@ -64,6 +69,7 @@ export default function App() {
         selectedSalCode={picked?.salCode ?? null}
         pinnedSalCodes={shortlist.codes}
         layerVisibility={layerVisibility}
+        sales={sales}
         mapApiRef={mapApiRef}
         onPick={setPicked}
       />
@@ -80,7 +86,11 @@ export default function App() {
               selectedMetricId={selectedMetricId}
               onSelect={setSelectedMetricId}
             />
-            <LayerToggle visibility={layerVisibility} onToggle={toggleLayer} />
+            <LayerToggle
+              visibility={layerVisibility}
+              onToggle={toggleLayer}
+              availability={{ sales: salesHasData }}
+            />
             <ShortlistPanel
               artifact={artifacts.metrics}
               codes={shortlist.codes}

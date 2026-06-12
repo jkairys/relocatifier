@@ -130,3 +130,19 @@ class TestRuns:
         client.post("/runs", json={})
         runs_list = client.get("/runs?limit=10").json()
         assert len(runs_list) == 2
+
+
+class TestExport:
+    def test_export_writes_artifact(self, client, settings):
+        client.post("/watchlist/30900")
+        res = client.post("/export")
+        assert res.status_code == 200
+        body = res.json()
+        assert body["status"] == "ok"
+        assert body["path"] == str(settings.sales_artifact_path)
+
+        import json
+
+        data = json.loads(settings.sales_artifact_path.read_text())
+        assert data["schema_version"] == 2
+        assert "30900" in data["suburbs"]
