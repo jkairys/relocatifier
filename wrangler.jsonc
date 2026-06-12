@@ -22,14 +22,12 @@
       "binding": "DATA",
       "bucket_name": "relocatifier-data"
     }
-  ]
+  ],
 
-  // TODO-DOMAIN: once the custom domain is chosen, uncomment and set the
-  // hostname below. Until then, deploys land on <name>.<subdomain>.workers.dev.
-  // "routes": [
-  //   {
-  //     "pattern": "TODO-DOMAIN.example.com",
-  //     "custom_domain": true
-  //   }
-  // ]
+  "routes": [
+    {
+      "pattern": "relocatifier.com",
+      "custom_domain": true
+    }
+  ]
 }
