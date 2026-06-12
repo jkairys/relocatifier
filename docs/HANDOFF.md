@@ -40,7 +40,7 @@ Cloudflare Worker (static assets = `app/dist`) + R2 bucket `relocatifier-data` f
 1. **Small**: QLD price ambiguous-name fix — disambiguate same-name OTH slugs by matching slug postcode to each SAL's dominant POA (machinery exists in `rents.py::dominant_zone_by_area`); recovers White Rock & ~14 friends. Also worth trying for the QLD crime unmatched names.
 2. **v1.1 Parcels**: block-size layer. Port `school-map/services/parcel-analytics` (QLD ArcGIS cadastre, adaptive batching) + add NSW DCS Spatial cadastre; zoom-dependent rendering (individual parcels coloured by size ≥z13, suburb median block size choropleth below). User's filter: targets 600–800 m² blocks, avoids ~400 m² new estates.
 3. **v1.2 Climate**: BOM gridded climatology sampled at suburb centroids (monthly temp/rain).
-4. **Watchlist phase**: port listings-scraper (OnTheHouse ONLY — multi-vendor refactor abandoned deliberately, ADR-0004), drive it from inside the app (one product, no separate admin UI), Starred Listings hand-import, NAPLAN via slimmed MySchool scraper keyed by ACARA ID.
+4. **Watchlist phase**: recent-sales-per-suburb is fully worked up in issue #3 (recentlysold-only port, DuckDB store + artifact reads per ADR-0006, queried-SAL assignment per ADR-0007) — start there. Then: forsale observation for time-on-market, Starred Listings hand-import, NAPLAN via slimmed MySchool scraper keyed by ACARA ID.
 
 ## Working-style notes (the user's stated preferences)
 

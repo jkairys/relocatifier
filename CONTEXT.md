@@ -21,8 +21,11 @@ A single per-Suburb attribute used for comparison — median age, median house p
 The 10,000-foot research mode: comparing Metrics across every Suburb in the Search Zone (choropleth maps, stat sheets) to produce a shortlist. Tolerates stale-but-consistent data.
 
 **Watchlist**:
-A set of shortlisted Suburbs that receive fresher, deeper data collection — historical sales, price-over-time, time-on-market, property-to-school proximity. The zoom-in mode that follows Discovery.
-_Avoid_: watch area, watch collection, watch list
+The set of Suburbs deliberately marked to receive fresher, deeper data collection — historical sales, price-over-time, time-on-market, property-to-school proximity. Adding a Suburb is the decision to spend acquisition effort on it; membership is independent of the Shortlist. The zoom-in mode that follows Discovery.
+_Avoid_: watch area, watch collection, watch list, scrape list
+
+**Shortlist**:
+The lightweight comparison set in Discovery — Suburbs picked for side-by-side Metric comparison. Costs nothing to add to and triggers no data collection. A Suburb can be on the Shortlist, the Watchlist, both, or neither.
 
 **Starred Listing**:
 A single live listing the user found while browsing a real-estate site and imported by hand to track alongside Watchlist data. Live listings are never scraped in bulk.
