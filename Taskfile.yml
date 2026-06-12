@@ -24,3 +24,15 @@ tasks:
     dir: app
     cmds:
       - npm run build
+
+  data:publish:
+    desc: Upload data artifacts (PMTiles + metrics.json) from app/public/data to the relocatifier-data R2 bucket
+    cmds:
+      - npx wrangler r2 object put relocatifier-data/suburbs.pmtiles --file app/public/data/suburbs.pmtiles --content-type application/octet-stream --remote
+      - npx wrangler r2 object put relocatifier-data/metrics.json --file app/public/data/metrics.json --content-type application/json --remote
+
+  deploy:
+    desc: Build the app and deploy the worker + static assets to Cloudflare (first-time / local deploys; CI does this on push to main)
+    cmds:
+      - task: app:build
+      - npx wrangler deploy

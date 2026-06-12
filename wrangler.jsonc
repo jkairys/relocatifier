@@ -1,0 +1,35 @@
+{
+  // Relocatifier — Cloudflare Worker with static assets (ADR-0005).
+  // Static app build (app/dist) is served by the assets binding; the worker
+  // intercepts /data/* and range-serves the artifacts from R2.
+  "$schema": "node_modules/wrangler/config-schema.json",
+  "name": "relocatifier",
+  "account_id": "07090336006871f5e6e5c24494e31fb0",
+  "compatibility_date": "2025-06-01",
+  "main": "worker/index.ts",
+
+  "assets": {
+    "directory": "app/dist",
+    "binding": "ASSETS",
+    // The worker runs before assets for data paths so it can serve them from
+    // R2 with proper HTTP Range support (PMTiles relies on Range requests,
+    // which Cloudflare's static-asset serving doesn't reliably honour).
+    "run_worker_first": ["/data/*"]
+  },
+
+  "r2_buckets": [
+    {
+      "binding": "DATA",
+      "bucket_name": "relocatifier-data"
+    }
+  ]
+
+  // TODO-DOMAIN: once the custom domain is chosen, uncomment and set the
+  // hostname below. Until then, deploys land on <name>.<subdomain>.workers.dev.
+  // "routes": [
+  //   {
+  //     "pattern": "TODO-DOMAIN.example.com",
+  //     "custom_domain": true
+  //   }
+  // ]
+}
