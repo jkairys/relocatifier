@@ -145,4 +145,8 @@ vite.config.ts.timestamp-*
 # Data artifacts and raw downloads
 etl/data/
 scraper/data/
-app/public/data/
+# No trailing slash so this also ignores the worktree:init symlink, not just a real dir
+app/public/data
+
+# Parallel-agent worktrees (Claude Code creates these under .claude/worktrees/)
+.claude/worktrees/

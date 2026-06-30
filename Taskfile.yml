@@ -14,10 +14,12 @@ tasks:
       - uv run etl build
 
   scraper:dev:
-    desc: Run the listings-acquisition control-plane service (uvicorn on :8210)
+    desc: Run the listings-acquisition control-plane service (uvicorn). Override the port for parallel worktrees with SCRAPER_PORT, e.g. SCRAPER_PORT=8211 task scraper:dev
     dir: scraper
+    vars:
+      SCRAPER_PORT: '{{.SCRAPER_PORT | default "8210"}}'
     cmds:
-      - uv run uvicorn scraper.api:app --port 8210 --reload
+      - uv run uvicorn scraper.api:app --port {{.SCRAPER_PORT}} --reload
 
   scraper:export:
     desc: Regenerate sales.json from the existing DuckDB store (no scraping)
@@ -49,6 +51,44 @@ tasks:
       - npx wrangler r2 object put relocatifier-data/suburbs.pmtiles --file app/public/data/suburbs.pmtiles --content-type application/octet-stream --remote
       - npx wrangler r2 object put relocatifier-data/metrics.json --file app/public/data/metrics.json --content-type application/json --remote
       - npx wrangler r2 object put relocatifier-data/sales.json --file app/public/data/sales.json --content-type application/json --remote
+
+  data:pull:
+    desc: Mirror published data artifacts from R2 into the shared local cache (no ETL). Run once per machine, or to refresh prod data.
+    vars:
+      CACHE: '{{.HOME}}/.cache/relocatifier/data'
+    cmds:
+      - mkdir -p {{.CACHE}}
+      - npx wrangler r2 object get relocatifier-data/suburbs.pmtiles --file {{.CACHE}}/suburbs.pmtiles --remote
+      - npx wrangler r2 object get relocatifier-data/metrics.json --file {{.CACHE}}/metrics.json --remote
+      - npx wrangler r2 object get relocatifier-data/sales.json --file {{.CACHE}}/sales.json --remote
+      - echo "Pulled artifacts to {{.CACHE}}"
+
+  worktree:init:
+    desc: Prepare the current git worktree for parallel-agent dev — install deps and link the shared data cache. Run once in each new worktree.
+    vars:
+      CACHE: '{{.HOME}}/.cache/relocatifier/data'
+    cmds:
+      - npm ci
+      - npm ci --prefix app
+      - uv sync --project etl
+      - uv sync --project scraper
+      - mkdir -p {{.CACHE}}
+      # Reader worktrees link app/public/data at the shared cache. A worktree
+      # that regenerates artifacts (ETL writer) keeps its own real dir — we
+      # never clobber a non-symlink directory here.
+      - |
+        if [ -e app/public/data ] && [ ! -L app/public/data ]; then
+          echo "app/public/data is a real directory — leaving it as-is (writer worktree)."
+        else
+          rm -f app/public/data
+          mkdir -p app/public
+          ln -sfn {{.CACHE}} app/public/data
+          echo "Linked app/public/data -> {{.CACHE}}"
+        fi
+      - |
+        if [ ! -e {{.CACHE}}/suburbs.pmtiles ]; then
+          echo "NOTE: data cache is empty — run 'task data:pull' once to populate it from R2."
+        fi
 
   deploy:
     desc: Build the app and deploy the worker + static assets to Cloudflare (first-time / local deploys; CI does this on push to main)
